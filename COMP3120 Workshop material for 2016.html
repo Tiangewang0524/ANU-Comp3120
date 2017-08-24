@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>COMP3120 Workshop material for 2016</title>
+    <link rel="shortcut icon" href="https://wattlecourses.anu.edu.au/theme/image.php/anumore/theme/1464187245/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(e,t){return function(){o(e,[(new Date).getTime()].concat(a(arguments)),null,t)}}var o=e("handle"),i=e(2),a=e(3);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var u=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(u,function(e,t){newrelic[t]=r(f+t,"api")}),i(c,function(e,t){newrelic[t]=r(f+t)}),t.exports=newrelic,newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),o("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(0>o?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?u(e,a,i):i()}function n(n,r,o){e&&e(n,r,o);for(var i=t(o),a=l(n),u=a.length,c=0;u>c;c++)a[c].apply(i,r);var s=f[g[n]];return s&&s.push([m,n,r,i]),i}function p(e,t){w[e]=l(e).concat(t)}function l(e){return w[e]||[]}function d(e){return s[e]=s[e]||o(n)}function v(e,t){c(e,function(e,n){t=t||"feature",g[n]=t,t in f||(f[t]=[])})}var w={},g={},m={on:p,emit:n,get:d,listeners:l,context:t,buffer:v};return m}function i(){return new r}var a="nr@context",u=e("gos"),c=e(2),f={},s={},p=t.exports=o();p.backlog=f},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!w++){var e=v.info=NREUM.info,t=s.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&t){c(l,function(t,n){e[t]||(e[t]=n)});var n="https"===p.split(":")[0]||e.sslForHttp;v.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=v.proto+e.agent,t.parentNode.insertBefore(r,t)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=window,s=f.document;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},e(1);var p=""+location,l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-918.min.js"},d=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),v=t.exports={offset:a(),origin:p,features:{},xhrWrappable:d};s.addEventListener?(s.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(s.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),u("mark",["firstbyte",a()],null,"api");var w=0},{}]},{},["loader"]);</script>
+<meta name="keywords" content="moodle, COMP3120 Workshop material for 2016" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/wattlecourses.anu.edu.au","sesskey":"TPYA4qtU5U","loadingicon":"https:\/\/wattlecourses.anu.edu.au\/theme\/image.php\/anumore\/core\/1464187245\/i\/loading_small","themerev":"1464187245","slasharguments":1,"theme":"anumore","jsrev":"1464187245","svgicons":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''};if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else me.path=component+'/'+component+'.'+me.type};
+YUI_config = {"debug":false,"base":"https:\/\/wattlecourses.anu.edu.au\/lib\/yuilib\/3.15.0\/","comboBase":"https:\/\/wattlecourses.anu.edu.au\/theme\/yui_combo.php?r1464187245&","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui-patched":{"combine":true,"root":"3.15.0_1\/","patterns":{"dd-drag":{"group":"yui-patched"},"dd-gestures":{"group":"yui-patched"}},"modules":{"dd-drag":[],"dd-gestures":[]}},"yui2":{"base":"https:\/\/wattlecourses.anu.edu.au\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/wattlecourses.anu.edu.au\/theme\/yui_combo.php?r1464187245&","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/wattlecourses.anu.edu.au\/theme\/yui_combo.php?m\/1464187245\/","combine":true,"comboBase":"https:\/\/wattlecourses.anu.edu.au\/theme\/yui_combo.php?r1464187245&","ext":false,"root":"m\/1464187245\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-formchangechecker":{"requires":["base","event-focus"]},"moodle-core-session-extend":{"requires":["base","node","io-base","panel","dd-plugin"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-formautosubmit":{"requires":["base","event-key"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core_availability-form":{"requires":["base","node","event","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-calendar-eventmanager":{"requires":["base","node","event-mouseenter","overlay","moodle-calendar-eventmanager-skin"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-toolboxes":{"requires":["node","base","event-key","node","io","moodle-course-coursebase","moodle-course-util"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-passwordunmask":{"requires":["node","base"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_dialogue-clickredirector":{"requires":["base","node","json-parse","clickredirector","clickredirector-filters","clickredirector-highlighters","event","event-key"]},"moodle-mod_dialogue-autocomplete":{"requires":["base","node","json-parse","autocomplete","autocomplete-filters","autocomplete-highlighters","event","event-key"]},"moodle-mod_dialogue-userpreference":{"requires":["base","node","json-parse","userpreference","userpreference-filters","userpreference-highlighters","event","event-key"]},"moodle-mod_oublog-savecheck":{"requires":["base","node","io","panel","moodle-core-notification-alert"]},"moodle-mod_oublog-tagselector":{"requires":["base","node","autocomplete","autocomplete-filters","autocomplete-highlighters"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-block_navigation-navigation":{"requires":["base","io-base","node","event-synthetic","event-delegate","json-parse"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","io","overlay","escape","event","event-simulate","event-custom","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-scrollview":{"requires":["base","node"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-theme_bootstrapbase-bootstrap":{"requires":["node","selector-css3"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/wattlecourses.anu.edu.au\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/wattlecourses.anu.edu.au\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1464187245\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/wattlecourses.anu.edu.au\/lib\/javascript.php\/1464187245\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker"]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" href="https://wattlecourses.anu.edu.au/theme/yui_combo.php?r1464187245&rollup/3.15.0/yui-moodlesimple-min.css" /><script type="text/javascript" src="https://wattlecourses.anu.edu.au/theme/yui_combo.php?r1464187245&rollup/3.15.0_1/yui-moodlesimple-min.js&amp;rollup/1464187245/mcore-min.js"></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://wattlecourses.anu.edu.au/theme/styles.php/anumore/1464187245/all" />
+<link rel="stylesheet" type="text/css" href="https://wattlecourses.anu.edu.au/mod/book/tool/print/print.css" />
+<script type="text/javascript" src="https://wattlecourses.anu.edu.au/lib/javascript.php/1464187245/lib/javascript-static.js"></script>
+
+<script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-69728723-1', 'auto');
+     ga('send', 'pageview');
+
+     ga('create', 'UA-5266663-4', 'auto', {'name': 'allANU'});
+     ga('allANU.send', 'pageview');
+     </script>    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body  id="page-mod-book-print" class="format-topics  path-mod path-mod-book safari dir-ltr lang-en yui-skin-sam yui3-skin-sam wattlecourses-anu-edu-au pagelayout-embedded course-16173 context-1044873 cmid-823670 category-478 category-4 ">
+<div class="skiplinks"><a class="skip" href="#maincontent">Skip to main content</a></div>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+<div id="nice_debug_area"></div><div id="page">
+    <div id="page-content" class="clearfix">
+        <div role="main"><span id="maincontent"></span><a onclick="window.print();return false;" class="hidden-print" href="#"><img class="icon" alt="Print book" title="Print book" src="https://wattlecourses.anu.edu.au/theme/image.php/anumore/booktool_print/1464187245/book" />Print book</a>    <a name="top"></a>
+    <h1>COMP3120 Workshop material for 2016</h1>    <p class="book_summary"><h3>COMP3120 Workshop material for 2016</h3>
+<p>This wattle e-book contains all the notes, instructions, worksheets, and resources for use within workshop sessions. It also includes links to the reflection activities due for submission after each workshop</p>
+<p><strong><span style="color: #0000ff;"><em>You will need to access this material in preparation for each workshop as well as to submit your reflection piece</em>.</span></strong></p></p>
+    <div class="book_info"><table>
+    <tr>
+    <td>Site:</td>
+    <td><a href="https://wattlecourses.anu.edu.au">Wattle</a></td>
+    </tr><tr>
+    <td>Course:</td>
+    <td>COMP3120 - Managing Software Development - Sem 1 2016</td>
+    </tr><tr>
+    <td>Book:</td>
+    <td>COMP3120 Workshop material for 2016</td>
+    </tr><tr>
+    <td>Printed by:</td>
+    <td>Tiange Wang</td>
+    </tr><tr>
+    <td>Date:</td>
+    <td>Tuesday, 31 May 2016, 12:24 AM</td>
+    </tr>
+    </table></div>
+
+    <div class="book_toc_indented"><a name="toc"></a><h2>Table of contents</h2><ul><li><a title="Workshops" href="#ch165537">Workshops</a></li><li><a title="&amp;lt;b&amp;gt;Workshop #1&amp;lt;/b&amp;gt; -- Introduction to teamwork and high-performing teams" href="#ch165539"><b>Workshop #1</b> -- Introduction to teamwork and high-performing teams</a><ul><li><a title="Teamwork Scenario" href="#ch169773">Teamwork Scenario</a></li></ul></li><li><a title="&amp;lt;b&amp;gt;Workshop #2 &amp;lt;/b&amp;gt;-- Initial Project Planning" href="#ch165540"><b>Workshop #2 </b>-- Initial Project Planning</a><ul><li><a title="Husky Air Pilot Angels Case study material" href="#ch165538">Husky Air Pilot Angels Case study material</a></li></ul></li><li><a title="Workshop #3 - Reviewing &amp;amp;amp; Writing Workshop with ASLC" href="#ch169774">Workshop #3 - Reviewing &amp; Writing Workshop with ASLC</a></li><li><a title="&amp;lt;b&amp;gt;Workshop #4 &amp;lt;/b&amp;gt;-- Story Writing Workshop" href="#ch165541"><b>Workshop #4 </b>-- Story Writing Workshop</a></li><li><a title="&amp;lt;b&amp;gt;Workshop #5&amp;lt;/b&amp;gt; -- User Story Map and Minimum Viable Product" href="#ch165542"><b>Workshop #5</b> -- User Story Map and Minimum Viable Product</a></li><li><a title="&amp;lt;b&amp;gt;Workshop #6 &amp;lt;/b&amp;gt;-- Relative estimation using Planning Poker" href="#ch165544"><b>Workshop #6 </b>-- Relative estimation using Planning Poker</a></li><li><a title="&amp;lt;b&amp;gt;Workshop #7&amp;lt;/b&amp;gt; -- Planning the Schedule: Releases &amp;amp;amp; Iterations" href="#ch165546"><b>Workshop #7</b> -- Planning the Schedule: Releases &amp; Iterations</a></li><li><a title="Workshop #8 - Iteration Planning" href="#ch169776">Workshop #8 - Iteration Planning</a></li></ul></div><div class="book_chapter"><a name="ch165537"></a><p>This Wattle e-book contains information about each of the workshop sessions.</p>
+<p>It contains links to all the material required for each workshop such as readings, instructions and worksheets. </p>
+<h2><span style="font-size: x-large;"><strong> </strong></span></h2></div><div class="book_chapter"><a name="ch165539"></a><h2>Workshop #1 -- Introduction to teamwork &amp; high-performing teams</h2>
+<h5>Table of Contents <a name="Top"></a></h5>
+<ul>
+<li><a href="#Intro">Introduction</a></li>
+<li><a href="#Obj">Objectives </a></li>
+<li><a href="#App">Approach </a></li>
+<li><a href="#Prep">Preparation </a></li>
+<li><a href="#Act">Workshop Activities </a>
+<ul>
+<li><a href="#PartI">Part I. Personality and preferred working style (55 minutes) </a>
+<ul>
+<li>1. Form assignment teams (5 minutes) </li>
+<li>2. Discover something about yourself and your teammates (20 minutes) </li>
+<li>3. Discover your preferred work preferences and associated roles (20 minutes) </li>
+<li>4. Disruptive team roles – 10 minutes </li>
+</ul>
+</li>
+<li><a href="#PartII">Part II. Problem team members and teamwork – Hitch-hikers and Couch Potatoes (30 Minutes) </a></li>
+<li><a href="#PartIII">Part III. Creating a Team Charter (20 Minutes)</a></li>
+</ul>
+</li>
+<li><a href="#Goals">Learning Goals</a></li>
+<li><a href="#Supp">Supplementary Resources</a></li>
+</ul>
+<h3>Introduction <a name="Intro"></a></h3>
+<p>Software development happens within a team and collaborative environment. Many times we do not learn what it means to work collaboratively and as part of a team: we are simply put in a team and are expected to be able to be productive. Team leadership and project management is another aspect of professional life where we rarely receive any instruction before the first time we are asked to take on those roles.</p>
+<p>The purpose of this workshop is to introduce you to the concepts underpinning teamwork and the formation of high-performing teams. This week’s workshop is based on the readings and scenario included in your COMP3120 Workshop e-Book chapter entitled Workshop #1 – Teamwork and High Performing Teams.</p>
+<p>Your tutor will bring printed copies of this worksheet to the workshop. You will need to ensure that you have access to the scenario and pre-workshop reading material either electronically or in hard copy.</p>
+<p>For this workshop, you will work in your assignment teams. It will provide you with the opportunity to find out more about yourself and your teammates. You will also discover what roles best suit you and how you might going about ensuring that your team performs highly.</p>
+<p>At the end of this workshop, you will understand what it means to work in a team, how personality affects what team roles you may be most suited to, how certain behaviours affect team operation and what is needed to develop a high-performing team.</p>
+<p><a href="#Top">Top</a></p>
+<h3>Objectives <a name="Obj"></a></h3>
+<ol>
+<li>To gain some understanding of
+<ul>
+<li> what factors influence teamwork,</li>
+<li> what you can do to help your team become a high-performing team, and</li>
+<li> to create a team charter for your assignment team.</li>
+</ul>
+</li>
+<li>As a whole class, to discuss each group's experiences.
+<ul>
+<li>Through discussion:
+<ul>
+<li>To understand difficulties likely to be encountered.</li>
+<li>To identify approaches to dealing with difficult team members</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Through discussion to improve your understanding and learn from other’s experiences.</li>
+</ol>
+<h3>Approach <a name="App"></a></h3>
+<p></p>
+<ol>
+<li>Where possible work in your assignment teams – groups should be no larger than 4 students and no smaller than 3 students.</li>
+<li>Students will work in their assignment teams and the workshop will be broken into three parts. Each part will involve group discussion as well as working in your teams and documenting the various team decisions made.</li>
+<li>There is a lot to get through, so we will need to work quickly. If you have not read the material before the workshop you will not get nearly so much from the session as you might otherwise.</li>
+</ol>
+<h3>Preparation <a name="Prep"></a></h3>
+<p>Prior to the workshop, each student will have:</p>
+<ul>
+<li>familiarised themself with</li>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823844" target="_blank">Dynamics of High-Performing Teams by Dick McCann</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823845" target="_blank">Concepts: Team Management Systems from Margerison-McCann</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823846" target="_blank">Notes and handouts for Team Building</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823847" target="_blank">Notes and handouts for MBTI</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823670&amp;chapterid=169773" target="_blank">Coping with Hitchhikers and Couch Potatoes scenario</a></li>
+</ul>
+<li>Re-read the chapter in your wattle Weekly lecture notes e-Book entitled Week 3 – Leadership, Management and Project Initiation</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Act"></a>Workshop Activities</h3>
+<h4>Part I. Personality and preferred working style (55 minutes)<a name="PartI"></a></h4>
+<h4>1. Form assignment teams (5 minutes)</h4>
+<p>If you don’t already know each member of your team, introduce yourselves. Swap your names and contact details.</p>
+<h4>2. Discover something about yourself and your teammates (20 minutes)</h4>
+<p>As a class we will work through pages 4-11 of Notes and Handouts for MBTI together. This will involve some general class discussion, followed by discussion within your teams to help you decide where you fit on the continuum of each personality type. Plot where you lie on the continuum between the two extremes of each personality type.</p>
+<table border="2" cellpadding="3" cellspacing="5">
+<tbody>
+<tr>
+<td><strong><span style="font-size: small;">     Student ID     </span></strong></td>
+<td><strong><span style="font-size: small;">  MBTI Dimension</span></strong></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p><strong><span style="font-size: small;">  E  _____________________________________________________  I  </span></strong></p>
+<p><strong><span style="font-size: small;">  S  _____________________________________________________  N</span></strong></p>
+<p><strong><span style="font-size: small;">  T  _____________________________________________________  F</span></strong></p>
+<p><strong><span style="font-size: small;">  J  _____________________________________________________  P</span></strong></p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p><strong><span style="font-size: small;">  E  _____________________________________________________  I</span></strong></p>
+<p><strong><span style="font-size: small;">  S  _____________________________________________________  N</span></strong></p>
+<p><strong><span style="font-size: small;">  T  _____________________________________________________  F</span></strong></p>
+<p><strong><span style="font-size: small;">  J  _____________________________________________________  P</span></strong></p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p><strong><span style="font-size: small;">  E  _____________________________________________________  I</span></strong></p>
+<p><strong><span style="font-size: small;">  S  _____________________________________________________  N</span></strong></p>
+<p><strong><span style="font-size: small;">  T  _____________________________________________________  F</span></strong></p>
+<p><strong><span style="font-size: small;">  J  _____________________________________________________  P</span></strong></p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p><strong><span style="font-size: small;">  E  _____________________________________________________  I</span></strong></p>
+<p><strong><span style="font-size: small;">  S  _____________________________________________________  N</span></strong></p>
+<p><strong><span style="font-size: small;">  T  _____________________________________________________  F</span></strong></p>
+<p><strong><span style="font-size: small;">  J  _____________________________________________________  P</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><span style="color: inherit; font-family: inherit; font-size: 17.5px; font-weight: bold;">3. Discover your preferred work preferences and associated roles (20 minutes)</span></p>
+<p>This section of the workshop is based on pages 3-4 of Notes and Handouts for <em>What it Means to Work in a Team</em>.</p>
+<p>As for the preceding section of the workshop, this will involve class discussion followed by discussion within your teams. Once you have worked out which role(s) you prefer, place a cross in the box that represents each team member’s individual work preferences. Don’t forget to write your student ID at the top of the column representing that student’s preferences.</p>
+<table border="2" cellpadding="3" cellspacing="5">
+<tbody>
+<tr>
+<td>
+<p><span style="font-size: small;">                  |             Student</span></p>
+<p><span style="font-size: small;">Role            |                     ID</span></p>
+</td>
+<td> <span style="font-size: small;">   Student #1    </span></td>
+<td><span style="font-size: small;">    Student #2  </span>  </td>
+<td><span style="font-size: small;">    Student #3  </span>  </td>
+<td><span style="font-size: small;">    Student #4  </span>  </td>
+</tr>
+<tr>
+<td><span style="font-size: small;">Visionary / Innovator      </span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-size: small;">Checker / Quality Control    </span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-size: small;">Driver    </span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-size: small;">Socialiser / Human Conscience  </span>  </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><span style="color: inherit; font-family: inherit; font-size: 17.5px; font-weight: bold;">4. Disruptive team roles (10 minutes)</span></p>
+<p>As a group, we will discuss Team-Disrupting roles, covered in pages 4-5 of Notes and Handouts: What it Means to Work in a Team. This will be followed by a discussion within your teams of each of the disruptive roles, when they might arise, how the team will deal with them, and decide which if any are roles that individuals need to avoid adopting.</p>
+<table border="2" cellpadding="3" cellspacing="5" frame="border" style="border-color: #000000; border-width: 2px;">
+<tbody>
+<tr>
+<td><em><span style="font-size: small;">                         Student</span></em><br /><em><span style="font-size: small;">  Role                           ID</span></em></td>
+<td><em><span style="font-size: small;">      Student #1      </span></em></td>
+<td><em><span style="font-size: small;">      Student #2      </span></em></td>
+<td><em><span style="font-size: small;">      Student #3      </span></em></td>
+<td><em><span style="font-size: small;">      Student #4      </span></em></td>
+</tr>
+<tr>
+<td><em><span style="font-size: small;"><br />  Crank<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Stirrer<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Fuss-pot<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Tyrant<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Drop-out<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Plodder<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Rescuer<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em><br /><span style="font-size: small;">  Nit-Picker<br /><br /></span></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><a href="#Top">Top</a></p>
+<p><span style="color: inherit; font-family: inherit; font-size: 24.5px; font-weight: bold; line-height: 40px;">Part II. Problem team members and teamwork – Hitch-hikers and Couch Potatoes (30 Minutes)</span><a name="PartII"></a></p>
+<p>The next section of the workshop is based on the teamwork scenario from the Barbara Oakley paper “<em>Coping with Hitchhikers and Couch Potatoes on Teams</em>”. Within your group, have a brief discussion about how you will deal with this sort of behaviour. Do you recognise yourself in this behaviour?</p>
+<p>As a larger group, the whole class will discuss with the tutor what the fictitious group did wrong when dealing with their problem team members.</p>
+<p><a href="#Top">Top</a></p>
+<h3>Part III. Creating a Team Charter (20 Minutes)<a name="PartIII"></a></h3>
+<p>The final stage of this workshop is to come up with a brief team charter for your team. To do this you will draw on all the insights you have had and decisions you have made earlier in the workshop.</p>
+<p>To assist you with this, you should draw upon the material contained in pages 10-11 of <em>High Energy Teams</em>, that is “The Concepts: Linking Skills”. Within your team discuss these concepts and decide how your team is going to address these and ensure that they are part of your team behaviour.</p>
+<p>Remember, your charter needs to set clear and tangible team expectations. It should be direct, simple, and to the point. If it's not clear, or if it sounds "fluffy," dig deeper.</p>
+<p>Use this to guide your teamwork throughout the semester as you complete your assignments.</p>
+<p>Complete the following table. Make sure it is objective and realistic. There is absolutely no point saying your goal is to achieve an HD if you have never done that before or if you are unwilling or not in a position to put in the time to achieve that.</p>
+<table border="3" cellpadding="3" cellspacing="5">
+<tbody>
+<tr>
+<td style="background-color: #c6f4fa;"><span size="2" style="font-size: small;">                              Initial<br />Concepts            Approach  </span></td>
+<td style="background-color: #c6f4fa;"><span style="font-size: small;">                                                Description                                             </span></td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Team names /</span></p>
+<p><span style="font-size: small;">and /</span></p>
+<p><span style="font-size: small;">contact details</span></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Team objective</span></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Team goals -</span></p>
+<p><span style="font-size: small;">make sure they</span></p>
+<p><span style="font-size: small;">are measurable</span></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Communication --</span></p>
+<p><span style="font-size: small;">how,</span></p>
+<p><span style="font-size: small;">maximum acceptable</span></p>
+<p><span style="font-size: small;">response time</span></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Team meetings --</span></p>
+<p><span style="font-size: small;">when, where, how long,</span></p>
+<p><span style="font-size: small;">how frequently</span></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td><span style="font-size: small;">Team decision-making</span></td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Acceptable behaviour --</span></p>
+<p><span style="font-size: small;">core values</span></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Ground rules --</span></p>
+<p><span style="font-size: small;">expectations, rules and</span></p>
+<p><span style="font-size: small;">consequences, dealing</span></p>
+<p><span style="font-size: small;">with conflict</span></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small;">Member skills /</span></p>
+<p><span style="font-size: small;">knowledge /</span></p>
+<p><span style="font-size: small;">expertise</span></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p></p>
+<p></p>
+<p><a href="#Top">Top</a></p>
+<p><span style="color: inherit; font-family: inherit; font-size: 31.5px; font-weight: bold; line-height: 40px;">Learning Goals</span><a name="Goals"></a></p>
+<p>Students will know:</p>
+<ul>
+<li>That their own behaviour in a team affects the overall behaviour of the team, that understanding themselves better will improve their teamwork, and the characteristics displayed by high performing teams</li>
+</ul>
+<p>Students will understand:</p>
+<ul>
+<li>How to recognise good and bad team behaviours and how they like to work.</li>
+</ul>
+<p>Students will be able to:</p>
+<ul>
+<li>Modify their own behaviour so that they encourage good behaviour in other team members or to avoid exhibiting bad team behaviour themselves.</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h2>Supplementary Resources<a name="Supp" h2=""></a></h2>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/vihttps://wattlecourses.anu.edu.au/mod/resource/view.php?id=823851ew.php?id=823851" target="_blank">People Skills</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/url/view.php?id=823853" target="_blank">How to lead introverts and extroverts</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/url/view.php?id=823854" target="_blank">Myers Briggs Personality Type (MBTI)</a></li>
+<li><a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp" target="_blank">Jungian / MBTI Personality Test</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/url/view.php?id=823855" target="_blank">Sample Team Charters</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/url/view.php?id=823857" target="_blank">Team Ground Rules</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/page/view.php?id=823858" target="_blank">Quicker Ways to Build A High-Performance Team</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/page/view.php?id=823859" target="_blank">Links to short videos about leadership</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/page/view.php?id=823860" target="_blank">Projects At Work Article -- Team Trials</a></li>
+</ul>
+<h2><a name="Supp" h2=""></a></h2>
+<p></p>
+<h2><a name="Supp" h2=""></a></h2></div><div class="book_chapter"><a name="ch169773"></a><h3>Teamwork Scenario </h3>
+<p>Excerpt from Appendix A: Coping with Hitchhikers and Couch Potatoes on Teams, <em>It Takes Two To Tango: How ‘Good’ Students Enable Problematic Behaviour in Teams</em> by Barbara Oakley, Ph.D., P.E. Assistant Professor of Engineering, Department of Electrical and Systems Engineering, Oakland University Rochester, Michigan 48309 (248) 370-2435 oakley@oakland.edu</p>
+<p>In this handout, I will discuss at least two superficially similar types of problematic people. The first type is the ‘couch potato.’ If you think of yourself as tired and bored and really more interested in watching TV than working on your homework (everyone has had times like these), you begin to get a picture of the couch potato. A second, far more difficult type of person to deal with, is the ‘hitchhiker.’ Hitchhikers are called hitchhikers because they can get through engineering school by hitchhiking with various groups while contributing little to nothing themselves. Learning how to handle yourself with couch potato or hitchhiker types can save you a lot of grief and aid in more productive relationships. In the long run, changing your reactions to these people can prove beneficial not only for you but also for the person who is causing your problems. </p>
+<p><strong>Jack, the Hitchhiker</strong></p>
+<p>To begin with, let’s imagine that you have been assigned to a combined homework and lab group this semester with three others: Mary, Henry, and Jack. Mary is okay—she’s not really that good at solving problems, but she tries as hard as she can, and she willingly does things such as taking the time to go in to see the professor or the grader to get questions answered when no one in the group can figure them out. Henry is a little more irritating. He’s a nice guy, but he just doesn’t put in the time or effort needed to do a very good job. He’ll sheepishly hand over partially worked homework problems and confess to spending the weekend riding his motorbike. Henry is so nice about it, though, that you can’t help but like him and cut him a little slack, although sometimes you get irritated and grumble to Mary. </p>
+<p>Jack, on the other hand, has been nothing but a problem. In fact, Jack is such a problem that we will focus only on him for a while because you will be able to use some of the same methods to deal with Jack (the hitchhiker) as you use with Henry (the couch potato). </p>
+<p>Here are a few of the things Jack has done:</p>
+<ul>
+<li>When you tried to set up meeting times at the beginning of the semester, Jack always seemed to have something scheduled, so that he couldn’t meet with the rest of the group.</li>
+<li>Jack infrequently turns in his homework. And when he does turn in homework, it is almost always wrong. In fact, he obviously spends less than two minutes on a problem—just enough to put some junk down on the paper that looks like work. </li>
+<li>Jack has never answered a phone message. When you confronted him about it, he denied getting any messages. You e-mailed him, but he never answered those, either. When you finally confronted him about the e-mails, he said he was “too busy to answer.” </li>
+<li>Jack doesn’t show up for meetings—even after everyone in the group has asked him to do so. (Last time he promised he would “be there for sure.” But he wasn’t there.) </li>
+<li>His writing skills are okay, but he just can’t seem to do anything right for the lab reports. He loses the drafts, or doesn’t reread his work, or leaves out the tables, or does something sloppy like write in the equations by pencil (“I don’t know how to use equation editor”). You’ve stopped assigning any work to him related to the lab report, because you don’t want to flub the strict deadlines your professor has imposed. </li>
+<li>Jack continually complains about his many problems, such as the fifty-hour work weeks at his job, along with the heavy workload from the three other classes he’s signed up for, the bad textbooks, and the terrible teachers. At first, you felt sorry for him—but recently it has begun to occur to you that Jack is using you. You’ve even begun to wonder if Jack has set up this inappropriate work/study schedule on purpose because he realizes he can get other people to do a lot of his work for him. </li>
+<li>Jack speaks loudly and self-confidently when you try to discuss his problems–he seems to think the problems are all the fault of the others in the group. He is so certain of himself that your fellow group members and you yourself almost wonder if it really is your fault. </li>
+<li>Your group finally was upset enough to discuss the situation with Professor Distracted. He, in turn, talked, along with the group, to Jack, who in very sincere and convincing fashion said that he just hadn’t really understood what everyone wanted him to do. Dr. Distracted stated that the problem must be that the group was not communicating effectively. He noticed that you, Mary, and Henry looked angry and agitated, while Jack simply looked bewildered, a little hurt, and not at all guilty. It was easy then for Dr. Distracted to conclude that this was a dysfunctional group, and that everyone was at fault—probably Jack least of all. </li>
+<li>The bottom line is: You and your teammates are left holding the bag—Jack is getting the same good grades as everyone else in the group without doing a lick of work. Oh yes— and he managed to make you all look bad while he was at it. </li>
+</ul>
+<p><strong>Henry, the Couch Potato </strong></p>
+<p>But we haven’t discussed Henry yet (remember Henry?). Although Henry stood up with the rest of the group to try to battle against Jack’s irrational behavior, he hasn’t really been pulling his full weight. Actually, Jack was so bad to work with that you didn’t even think about Henry’s occasional couch potato antics. </p></div><div class="book_chapter"><a name="ch165540"></a><h2>Workshop #2 Worksheet</h2>
+<h3><a name="Top"></a>Initial Project Planning:<br />The Scope, the Backbone, and Decomposition</h3>
+<h4>Table of Contents</h4>
+<ul>
+<li>Introduction</li>
+<li><a href="#Obj">Objectives </a></li>
+<li><a href="#App">Approach </a></li>
+<li><a href="#Prep">Preparation </a></li>
+<li><a href="#Work">Workshop Activities </a></li>
+<li><a href="#PartI">Part I. Project Scope – Backbone and Walking Skeleton – Moving House (50 minutes) </a></li>
+<ul>
+<li>1. Discuss the backbone: (10 minutes) </li>
+<li>2. Class discussion (10 minutes). </li>
+<li>3. Decomposing the backbone: Creating the “walking skeleton” (15 minutes) </li>
+<li>4. Class discussion (15 minutes). </li>
+</ul>
+</ul>
+<ul>
+<li><a href="#PartII">Part II. Project Scope and Backbone – Pilot Angels (60 minutes) </a></li>
+<ul>
+<li>1. Discuss the backbone: (10 minutes) </li>
+<li>2. Class Discussion (10 minutes) </li>
+<li>3. Decomposing the backbone: Creating the “walking skeleton” (30 minutes) 6</li>
+<li>4. Class discussion (10 minutes). </li>
+</ul>
+<li><a href="#Key">Learning Goals</a></li>
+<li><a href="#Resources">Supplementary Resources</a></li>
+</ul>
+<h3>Introduction</h3>
+<p>The semester’s workshops are based on the Husky Air: Pilot Angels scenario. In parallel, we will use a metaphor or example of a very simple project with which we are all familiar – moving house – to introduce and illustrate some of the learnings.</p>
+<p>The purpose of the first three workshops is to introduce you to and to give you some practice using an agile method for project planning called User Story Mapping which provides the team with a way to visualise the scope of the project and to show project priorities. During this first workshop we will be developing a “project backbone” and “walking skeleton”, which together provide a complete description of a project’s scope at the highest level.</p>
+<p>During the initial phase of project planning the software to be developed, or “product” as it is often called, first needs to be described. In agile project management the product owner and senior members of the development team, for example, the project manager, the architect, and business analyst, will produce a high-level description of the scope of the project – what must be done, what will not or cannot be done. At this stage in agile project planning using the User Story Map approach, we aim to identify the smallest number of highest level functions sometimes called “Epics” or “Themes” that describe the full scope of the software to be developed.</p>
+<p>The highest level of a User Story Map (USM) is called the “backbone” and comprises a number of vertebrae. The first level of decomposition of the USM is called the “walking skeleton” which provides a complete list of discrete (business) functions that describe what the software product must do to meet the business need. This is created by the product owner (and the stakeholders he or she represents) and the team who describe in a few, high-level functions what it is the product must do (its “functions”) to provide the required business outcomes (services and benefits).The product owner is responsible for the product backbone and walking skeleton: to ensure that one exists and contains suitable functional requirements.</p>
+<p>The backbone and walking skeleton provide the highest level description of what the software will do – together they provide the “scope”. (Sometimes noting what is out of scope can be as useful to Users as noting what is in scope.) Subsequent further decomposition to lower levels adds “meat” to these “bones”. We sometimes find it easier to describe the walking skeleton first and group these functions to arrive at a backbone, and sometimes the other way round. Either way is fine, as is both simultaneously! Whatever works for you at the time.</p>
+<p>All of the functions described by the backbone are too large for the team to estimate meaningfully and contain too little detail to describe precisely what will eventually be needed. These high-level functions will be “decomposed” into their component activities or functions on a “just-in-time” basis; that is they are decomposed only when greater detail is required. The team, often including the product owner, will break down these high-level functions into their component activities to add more detail, clearer definition and capture agreement and document better understanding of what they system must do. This is called “decomposition” and will eventually and repetitively throughout the life of the project, descend through many levels of increasing detail as the team approaches the “granules” of software that must be created.</p>
+<p>Decomposition is an iterative process that continues throughout the life of the project and is the process through which we create what we will come to know as “User Stories” – the stories that tell what the users want and need. User stories provide a simple description of the desired function and are written from the point of view of the role of the person who needs the functionality. They can be written by the team, the product owner or by other stakeholders. The product owner assumes responsibility for the user stories but does not necessarily write all the stories.</p>
+<p>User stories are a promise of a conversation around the story topic which, through the use of speech, aim to remove misunderstandings caused by writing. Stories are high-level and often abstract, but the conversation makes it tangible.</p>
+<p>Once the team starts development work, they regularly need to revisit the story map and the stories it contains. This process is often called “grooming” and, among other things, involves decomposing larger stories into smaller ones that can be more easily understood and estimated.</p>
+<p>Agile techniques acknowledge that not all detailed software functionality can be known at the beginning of a project. To attempt to do so is extremely wasteful of resources and, worse still, can lead to the delusion that the functions of the product are now fully understood, can be “signed off” by the stakeholders, and the product can now be coded and tested with these immutable requirements in mind!</p>
+<p>In contrast, Agile uses a technique of decomposing to the next level of detail as and when needed, or “just in time” decomposition. This ensures that early, detailed functionality is described and delivered quickly to the users as working code, which immediately improves everyone’s understanding of what is needed next. As we then move through subsequent iterations of describe, build, deliver – the users will progressively accept increasing functionality with increased confidence – that is, the subsequent functional decompositions are much better informed.</p>
+<p>This workshop will introduce you to some techniques for and provide you an opportunity to practice creating a backbone and walking skeleton through decomposition of very large user stories, which are known as Themes or Epics and form the backbone of a USM.</p>
+<p>Your tutor will play the role of product owner. As you work through the activities in this workshop, David and Lynette, acting as product owner, will spend short amounts of time with each group to answer questions and explain what the product must do.</p>
+<p><a href="#Top">Top</a>  </p>
+<h3><a name="Obj"></a>Workshop Objectives</h3>
+<ol>
+<li>To provide an introduction to User Story Mapping, which is one approach to agile project planning</li>
+<li>To practice creating:
+<ul>
+<li>a backbone and</li>
+<li>a walking skeleton</li>
+</ul>
+</li>
+<li>Through discussion, to improve your understanding and learn from other’s experiences.</li>
+</ol>
+<h3><a name="App"></a>Approach</h3>
+<ol>
+<li>Prior to the workshop, each student will have read the pre-workshop material and thought about what the workshop activities entail.</li>
+<li>Make sure you have access to this document for reference during the workshop – electronic or hard-copy.</li>
+<li>Students will work in groups of 3-5 students and the workshop will be broken into two parts.</li>
+<li>During the first 50 minutes, through small group work and larger group discussion, using the example of Moving House, we will define the scope – create the backbone and walking skeleton – for the moving house project.</li>
+<li>In the second hour, again through small group work and larger group discussion we will create the backbone and walking skeleton for the Husky Air Pilot Angels project.</li>
+<li>Using you individual Wattle Wiki, write your weekly Learning Journal entry that summarises the key points you have taken away from the workshop, reflects on why these are important for successful project managers and leaders, and links them to your personal learning goals, other courses, and outside experiences.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Prep"></a>Preparation</h3>
+<div>Prior to attending the workshop students will have read and digested the following:</div>
+<div style="margin-left: 30px;">a. <i>CaseStudy.pdf</i> – the workshop activities will be based upon this. <b>Bring a copy of the case study to the workshop.</b></div>
+<div style="margin-left: 30px;">b. <i>Boulders to Gravel_ Techniques for Decomposing User Stories _ The Agile Management Blog.pdf</i> and <i>SplittingStoriesIntoSmallVerticalSlices.pdf</i></div>
+<div style="margin-left: 30px;">b. Chapters 4 and 5 of your COMP3120 Lecture Notes e-Book (this should have been completed when you prepared for lectures)</div>
+<div style="margin-left: 30px;">c. This document.</div>
+<p> </p>
+<h2><a name="Work"></a>Workshop Activities</h2>
+<p>There is a lot to do, so you will need to work quickly. If you have not prepared you will find it difficult to keep up and your takeaways from the workshop are likely not to be as great as they would otherwise be.</p>
+<p><a href="#Top">Top</a></p>
+<h3><a name="PartI"></a>Part I. Project Scope – Backbone and Walking Skeleton – Moving House (50 minutes)</h3>
+<h4>1. Discuss the backbone: (10 minutes)</h4>
+<p>In your teams, discuss what might be the high-level functions that describe a project to move home. Imagine you and your family have sold you current home and bought a new one. As the date of the “move” approaches, what must be done to relocate the family and its belongings to achieve the outcome of “living in a new home”? Imagine what might be the differences if your families are apartment dwellers, house dwellers, Bedouin tribesmen, a student relocating from Beijing to the ANU. Appoint a scribe and a spokesperson within your team. Draw your agreed backbone on your worksheet.</p>
+<p>Look carefully at the backbone of the story map. Make sure that you all agree on the problem. If you are having difficulty, seek clarification from the product owner (tutor).</p>
+<h4>2. Class discussion (10 minutes).</h4>
+<p>The class will collectively build an agreed backbone with the tutor on the whiteboard.</p>
+<h4>3. Decomposing the backbone: Creating the “walking skeleton” (15 minutes)</h4>
+<p>Back in your teams, each team will discuss and decompose the backbone into its next level of detail – the “walking skeleton”.</p>
+<p>You will need to consider and make decisions related to, for example, will you do the move completely yourselves, will you do the packing and just get removalists to move the furniture and packed boxes, or will you get a removalist company to do the whole lot, or some other approach? What about where you’re moving to? How long will it take to get there? What might be needed immediately on arrival, and during the first few days? Will certain “rooms” need to be unpacked before others? Is there a required order of activity?</p>
+<p>Teams should document their decomposition on the worksheet.</p>
+<h4>4. Class discussion (15 minutes).</h4>
+<p>The class will discuss the decomposition of the agreed backbone with the tutor on the whiteboard.</p>
+<p>How might this technique be used when “managing software development”?</p>
+<p><a href="#Top">Top</a></p>
+<h3><a name="PartII"></a>Part II. Project Scope and Backbone – Pilot Angels (60 minutes)</h3>
+<h4>1. Discuss the backbone: (10 minutes)</h4>
+<p>In your teams, appoint a scribe and spokesperson; not the same person who took that role for the first half of the workshop. Discuss and document on your worksheet</p>
+<ul>
+<li>what you think the project is</li>
+<li>why it is being built and what are the sought after benefits</li>
+<li>what types of users (or roles) are there</li>
+</ul>
+<h4>2. Class Discussion (10 minutes)</h4>
+<p>The class will collectively build an agreed backbone with the tutor on the whiteboard.</p>
+<h4>3. Decomposing the backbone: Creating the “walking skeleton” (30 minutes)</h4>
+<p>Back in your teams, each team will discuss and decompose the provided backbone to the next level – the walking skeleton – the scope of the software product.</p>
+<ul>
+<ul>
+<ul>7.(a) Determine what high-level functions each user type/role requires (10 minutes)</ul>
+</ul>
+</ul>
+<p></p>
+<ul>
+<ul>Using the provided backbone and set of user types/roles, each team member will assume one of the user types/roles and should consider the problem from the point of view of their role – what do I need from this system? Look carefully at the backbone of the story map. What might be the high-level functions that describe a project for the Pilot Angels project from the perspective of your assigned user type/role?</ul>
+</ul>
+<ul>
+<ul>
+<ul>7(b) Discuss and agree necessary high-level functions that describe the Pilot Angels project (10 minutes)</ul>
+</ul>
+</ul>
+<p></p>
+<ul>
+<ul>Discuss the activities that each team member has come up with for each of the user type/roles. Make sure the team agrees and understands what is necessary for each user type/role. This may involve combining activities, adding activities or even removing activities.</ul>
+</ul>
+<ul>
+<ul>
+<ul>7(c) Draw your agreed walking skeleton on your worksheet (10 minutes)</ul>
+</ul>
+</ul>
+<p></p>
+<ul>
+<ul>This will involve making decisions about what is the smallest number of highest level business functions or user activities which describe the scope of the product. You will also need to decide to which “vertebra” each one belongs. That is, you will need to group the new high-level business functions according to the backbone you have been provided with.</ul>
+</ul>
+<p>Make sure that you all agree on the problem. If you are having difficulty, seek clarification from the product owner (tutor).</p>
+<h4>4. Class discussion (10 minutes).</h4>
+<p>The class will collectively discuss the activity and</p>
+<ul>
+<li>consider the experience of assuming different roles. Did this help you identify tasks that you might otherwise not have thought of?</li>
+<li>discuss the activities included in the walking skeleton</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3>Learning Goals<a name="Goals"></a></h3>
+<p>Students will know:</p>
+<ul>
+<li>that at the beginning of a project it is impossible to completely define exactly what a software product should do and</li>
+<li>that agile project techniques use a just-in-time approach to developing the detail of the software product by identifying the minimum amount of functionality that should be included in the upcoming release and only decomposing that.</li>
+</ul>
+<p>Students will understand:</p>
+<ul>
+<li>that each of the processes of building, testing and using the software develops new levels of understanding by users and developers and that this increased understanding has the potential to alter significantly how the system should actually operate;</li>
+<li>that just-in-time decomposition of user stories ensures that at the time we do  the decomposition we have the best possible knowledge of what is required rather than simply making guesses which is what tends to happen when decomposition is carried out too early.</li>
+</ul>
+<p>Students will be able to:</p>
+<ul>
+<li>decompose large user stories and</li>
+<li><span style="background-color: #f5f6f5;">develop the backbone and walking skeleton for a small software development project  </span></li>
+</ul>
+<div>
+<p><a href="#Top">Top</a></p>
+<h3>Supplementary Resources<a name="Resources"></a></h3>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=858232" target="_blank">User Story Essentials Quick Reference Guide</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=858230" target="_blank">Story Splitting Flowchart</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=858231" target="_blank">Story Mapping Concepts Quick Reference Guide</a></li>
+</ul>
+</div></div><div class="book_chapter"><a name="ch165538"></a><h3>Case Study - Husky Air : Pilot Angels</h3>
+<p>Imagine you work for a small business, <em>Soft Support</em>, which provides general computer support - hardware purchase and installation; Commercial Off-the-shelf software supply and installation; plus general troubleshooting related to both hardware and software. Alongside the CEO and the receptionist and CEO's executive assistant, the company currently employs 10 staff to service their clients' needs. Soft Support currently has a client base of about 60 clients most of whom are small businesses like themselves. Recently the company has expanded into the market of supplying bespoke software development.</p>
+<p><em>Soft Support</em> has just won the tender to develop software for Husky Air to support their 'Pilot Angels' volunteer service.</p>
+<h4>Background</h4>
+<p>Husky Air opened for business in January 2004 when L.T. Scully and several other investors pooled their life savings and secured a rather large loan from a Canberra bank.</p>
+<p>Located at Cooma airport, Husky Air is a fixed base operator (FBO) facility that offers a full range of services to the growing demands for business and private aviation. Currently, the company has 23 employees composed of pilots, mechanics, and office staff.</p>
+<p>As an FBO, Husky Air provides:</p>
+<ul>
+<li>Business jet, propjet, helicopter and propeller aircraft charter</li>
+<li>Refuelling</li>
+<li>Airframe, engine, propeller, and avionics maintenance</li>
+<li>Aircraft rental</li>
+<li>Flight instruction</li>
+<li>Pilot supplies</li>
+</ul>
+<p>Although FBOs at other airports offer similar services, Husky Air has been receiving increased attention throughout southern and western New South Wales for its charter service, maintenance, and flight instruction.</p>
+<h4>Pilot Angels</h4>
+<p>In addition, Husky Air coordinates a charitable service called Pilot Angels. Working with hospitals, health care agencies, and organ banks, Husky Air matches volunteer private pilots, willing to donate their time and aircraft, with needy people whose health care problems require them to travel to receive diagnostic or treatment services. In addition, Pilot Angels also will provide transportation for donor organs, supplies, and medical personnel. All flights are free of charge. Volunteer pilots use their own aircraft and pay all the costs.</p>
+<p><em>Mission Statement:</em><br /><em>Flight Angel is a charity that co-ordinates non-emergency flights for financially and medically needy people.</em></p>
+<p>The pilots who volunteer for the Pilot Angel program need no medical training and offer no medical assistance. The planes do not carry any medical equipment and do not have to accommodate any stretchers. Patients, however, must be medically stable and able to enter and exit the aircraft with no or little assistance. The Pilot Angel passengers typically travel to or from a hospital or clinic for diagnosis, surgery, or some other treatment. Travel companions, such as a relative, friend or nurse, are common.</p>
+<p>Currently, a pool of pilot volunteers is kept in a file folder. If a hospital or a person with a medical or financial hardship contacts Husky Air, the name of the traveller, the destination, dates/times, and the number of travel companions are requested. Because of limited weight restrictions in small aircraft, the weights of the passengers and their luggage are needed as well.</p>
+<p>After the initial information is provided, Husky Air contacts the volunteer pilots to determine their availability. Although a volunteer pilot may be willing and available for a Pilot Angel flight, the plane may not have the range or weight-carrying requirements. This may be an inefficient use of time since many pilots may have to be contacted until a pilot and suitable plane can be found. Currently, Husky Air believes that on average it takes 6 phone calls before a suitable and available pilot can be found. Husky has set an eventual objective of requiring only 1.5 telephone calls on average.</p>
+<h4>The Project Description</h4>
+<p>Husky Air would like to have a computer-based system to keep track of all its Pilot Angel volunteers. Basic information about the pilots may include their name, address, phone number, and so forth, as well as their total hours, certifications, and ratings. Moreover, specific information about a volunteer's aircraft would be useful. Such information should include the type of plane, aircraft identification number (called the N number), whether single or multi-engine and its capacity for carrying passengers and cargo. Some pilots own more than one plane.</p>
+<p>Husky Air also wants to know more about the people, hospitals, clinics, and organ banks who request the Pilot Angel service. In addition, they would also like basic information about the patients, their passengers, and specific needs to help match volunteers with the request for transport. The marketing people and the managers dealing with the government (for grants and compliance issues) also want some reports, but as yet they are only vague requirements. Management would also like help in knowing when and where to seek new volunteer pilots based on Pilot Angels ability to meet the demand for its services. Finally, Husky Air wants a list of all the Pilot Angel flights in order to recognise specific volunteers for their contributions. This would include:</p>
+<ul>
+<li>The pilot who flew the flight</li>
+<li>The plane that was used</li>
+<li>The total time of the flight</li>
+<li>The distance and destination of the flight</li>
+<li>The date and time of the flight</li>
+<li>The total fuel used</li>
+</ul>
+<p>(Scenario is drawn from <em>Information Technology Project Management: Providing Measurable Organizational Value</em>, Jack T. Marchewka, 2006, John Wiley and Sons, p26)</p></div><div class="book_chapter"><a name="ch169774"></a><h3>Workshop #3 - Reviewing &amp; Writing Workshop</h3>
+<h3><span style="color: #ff0000;">with Jodi Tutty from ASLC</span></h3>
+<p><span style="color: #000000;">In this workshop, we will begin work on Assignment 2 - Peer Review. </span></p>
+<p><span style="color: #000000;">Jodi will also give some tips on how to weave together individual team member research reports to create the briefing paper in answer to the scenario for assignment 3.</span></p>
+<h4><span style="color: #000000;">Workshop resources</span></h4>
+<ul>
+<li><span style="color: #000000;">You will need to bring with you in hard copy of have access to the Research Report that you will be reviewing.</span></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=864009" target="_blank"><span style="color: #000000;">Jodi's slides</span></a></li>
+<li><span style="color: #000000;"><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=848749" target="_blank">Student Rubric for use with Assignment 2 </a>(Peer Review) - pdf (Word version is available in the Assignments e-book)</span></li>
+<li><span style="color: #000000;"><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=848747" target="_blank">Assessment Rubric for Assignment 2</a> (Peer Review)</span></li>
+<li><span style="color: #000000;"><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=848748" target="_blank">Assessment Rubric for Assignment 3</a> (Briefing Paper) </span></li>
+</ul>
+<p></p>
+<p></p></div><div class="book_chapter"><a name="ch165541"></a><h3>Initial Project Planning: Story Writing Workshop</h3>
+<p><a name="Top"></a><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="#Intro">Introduction</a></li>
+<li><a href="#Obj">Objectives</a></li>
+<li><a href="#Approach">Approach</a></li>
+<li><a href="#Prep">Preparation</a></li>
+<li><a href="#Workshop">Workshop Activities</a></li>
+<ul>
+<li><a href="#PartI">Part I. Moving House –Creating the backlog – Writing User Stories (30 Minutes) </a></li>
+<ul>
+<li>1.Review the Moving House walking skeleton and scenario (5 minutes)</li>
+<li>2. Stakeholders by classification (5 minutes)</li>
+<li>3. Write User Stories for the Unpack function (20 mins)</li>
+</ul>
+</ul>
+<ul>
+<ul></ul>
+<li><a href="#PartII">Part II. Pilot Angels – Creating the Backlog – Writing User Stories (1 hour and 15 minutes)</a></li>
+<ul>
+<li>4. The User Perspective – Write User Stories for each persona (15 minutes)</li>
+<li>5. The Group/Agile team perspective – Writing User Stories (45 minutes)</li>
+<li>6. WITHIN THE GROUP write acceptance criteria (15 minutes)</li>
+</ul>
+</ul>
+<li style="list-style-type: none;">
+<ul>
+<li><a href="#PartIII">Part III. Class discussion (10 minutes)</a></li>
+</ul>
+</li>
+<li><a href="#Key">Key learnings</a></li>
+<li><a href="#Resources">Additional Resources</a></li>
+</ul>
+<h3><span style="color: inherit; font-family: inherit; font-size: 17.5px; font-weight: bold;">Introduction</span></h3>
+<p>In a previous workshop (#2 -- Initial Project Planning, using the Husky Air scenario), we learned how to create a Product Backbone and a Product Walking Skeleton to describe the business scope of the software we intend to develop. The purpose of this workshop is to introduce you to and to give you some practice developing a product backlog and writing User Stories.</p>
+<p>The product owner is responsible for the product backlog: to ensure that one exists and contains suitable stories, but not necessarily to write all the stories. User stories provide a simple description of the desired feature and are written from the point of view of the person who needs the new functionality. They can be written by the team, the product owner or by other stakeholders. Remember, writing the story is less important than the discussions that surround its writing.</p>
+<p>User stories are written throughout the life of the project. During the initiation phase of a project, a “story-writing workshop” is often held. The purpose of this workshop is to create a product backlog that adequately describes the desired functionality of the project. Additional story-writing workshops will be held prior to the start of each release cycle to “groom” the backlog: to confirm the stories that already exist are appropriate, to remove those that are no longer appropriate for the goal of that release, and to add new stories based on changes since the previous version of the backlog was created.</p>
+<p>Although the product owner is responsible for the product backlog and ensuring that the stories it contains provide adequate coverage of the product, stakeholders, including the team and the product owner, write user stories collaboratively. This approach enables the involvement of domain specialists in the writing of the stories. User stories are written from the user’s point of view, but not a generic user: stories are written from the point of view of those with whom the system interacts and who may never actually use the system.</p>
+<p>Examples<sup>1</sup> of user stories written for the design of a game:</p>
+<ul>
+<li>“As a newbie player, I want to know who goes first so we can start the game.”</li>
+<li>“As a competitive gamer, I want a way to leapfrog my opposing players.”</li>
+</ul>
+<p>Stories are usually written incrementally and include:</p>
+<ul>
+<li>A brief description of the user need;</li>
+<li>The conversations that take place during backlog grooming as part of release and iteration planning when the details of the stories are determined and confirmed; and</li>
+<li>The acceptance criteria, or the tests, against which completion of the story is measured.</li>
+</ul>
+<p>This workshop will introduce you to some techniques for and provide you an opportunity to practice writing user stories.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Obj"></a>Objectives</h4>
+<ol>
+<li>Further experience developing a Goal Driven Product Backlog also known as a User Story Map.</li>
+<li>To practice:
+<ul>
+<li>creating a product backlog,</li>
+<li>writing user stories following a simple template, and</li>
+<li>writing acceptance criteria.</li>
+</ul>
+</li>
+<li>Through discussion, to learn from other’s experiences.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Approach"></a>Approach</h4>
+<ol>
+<li>Prior to the workshop, each student will have read the pre-workshop material and thought about what the workshop activities entail.</li>
+<li>Students will work in groups of 3-5 students and the workshop will be broken into two parts.</li>
+<li>During the first 30 mins, groups will use the example of Moving House for which the Backbone and Walking Skelton were provided at the previous workshop. Groups will decompose and write user stories for the function “Unpack”.</li>
+<li>In the second hour and quarter, each group will work together to complete the activities based on the Case Study “Pilot Angels”.</li>
+<li>During the final ten minutes, all students will participate in a discussion covering the various activities undertaken.</li>
+<li>Using your individual Wattle Wiki, write your weekly Learning Journal entry that summarises the key points you have taken away from the workshop, reflects on why these are important for successful project managers and leaders, and links them to your personal learning goals, other courses and outside experiences.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Prep"></a>Preparation</h4>
+<p>Read and digest the following articles:</p>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823813" target="_blank">WriteAGreatUserStory.pdf</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823814" target="_blank">Identifying User Personas for Software Quality</a> and</li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823670&amp;chapterid=165538" target="_blank">CaseStudy.pdf</a> – the workshop activities will be based upon this. Bring a copy of the case study to the workshop.</li>
+</ul>
+<p><span style="color: #ff0000;"><strong>Bring these with you or make sure you have electronic access</strong></span></p>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Workshop"></a>Workshop Activities</h3>
+<p>As usual, there is a lot to do this week. You will need to work quickly. If you have not prepared you will find it difficult to keep up and your takeaways from the workshop are likely not to be as great as they would otherwise be.</p>
+<p><strong>Provided Materials</strong></p>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=865011" target="_blank">Worksheets</a>, index cards, post-it notes</li>
+<li><strong>From the previous workshop -- these should be in your "group envelopes"</strong>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=865175" target="_blank">Backbone and walking skeleton for the moving house example</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=865174" target="_blank">Backbone and walking skeleton for the Husky Air Pilot Angels project</a></li>
+</ul>
+</li>
+</ul>
+<h4><a name="PartI"></a>Part I. Moving House –Creating the backlog – Writing User Stories (30 Minutes)</h4>
+<h5><strong style="color: inherit; font-family: inherit;">1. </strong><strong style="color: inherit; font-family: inherit;">Review the Moving House walking skeleton and scenario (5 minutes)</strong></h5>
+<p>In your teams, review the backbone and walking skeleton of the moving house scenario discussed in workshop #2.</p>
+<p>The context is a family of four plus a cat moving from one suburban house to another on the other side of the same city.</p>
+<p><a href="#Top">Top</a></p>
+<h5>2. Stakeholders by classification (5 minutes)</h5>
+<p>During Workshop #2 (Initial Project Planning) we discussed stakeholder classifications of </p>
+<ul>
+<li>Sponsor </li>
+<li>Beneficiaries </li>
+<li>Participants </li>
+<li>Influencers </li>
+</ul>
+<p>Consider who these might be for the moving house scenario. Might they be mother, father, children? What about the removals company or the electricity supplier? Would stakeholders include the bank manager, solicitors, previous owners, or even the children's school (previous and new), councils? </p>
+<p>Use the classification to help you uncover all relevant stakeholders. Write these down.</p>
+<h5 style="font-size: 14px; margin: 10px 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 20px; color: #333333; text-rendering: optimizeLegibility;">3. Write User Stories for the Unpack function (20 mins)</h5>
+<p>Each team member may assume the role of one of the stakeholders, for example, mother, father, or child. Using Worksheet 1 write user stories for the <em>unpack function</em> that describe what must occur. </p>
+<p>Pay particular attention to the question – <em>does it all need to be unpacked on the first day?</em></p>
+<p>If not, what are the priorities, what are the reasons for that priority (e.g. need to eat, need to sleep). Do some of the epic user stories under “Unpack” not get decomposed for weeks? Forever? (We had a box in our shed that wasn’t unpacked for many years! It was labelled “Kitchen Stuff and Glasses” – it wasn’t!!) Do you have to do some things in a particular order, such as not unpacking the books until you have installed the bookcases?</p>
+<p>Look carefully at your user stories, and for each one make sure you write down what are the acceptance criteria.</p>
+<p>For example one story might be, “as a mother, I want the family to be able to shower and clean their teeth at the end of day 1 so they don’t get sick and smelly”. Think about what constitutes acceptance in this instance. How will you know when this story is complete, is “done”?</p>
+<p>Note the timeline. Make a note on each user story to show by when it must be completed. Is the family “receiving benefit” from the house before the “Moving In” is “completely completed”?</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="PartII"></a>Part II. Pilot Angels – Creating the Backlog – Writing User Stories (1 hour 15 minutes)</h4>
+<p>Using the supplied chart depicting the agreed backbone and walking skeleton of the Pilot Angels product, during this part of the workshops you will write user stories, including acceptance criteria, for the functions <em>C.1 “Match/find pilot able to undertake the journey”</em> and <em>C2 “Schedule and plan flight”</em>. If Groups have time, they can also write stories for function <em>B.1 “Receive Patient Request”.</em></p>
+<p><a href="#Top">Top</a></p>
+<h5>4. The User Perspective – Write User Stories for each persona (15 minutes)</h5>
+<p>To help you write the stories from the user perspective we want you each to take on the role of a key persona in the Husky Air Pilot Angels scenario. Key personas for the exercise are:</p>
+<ul>
+<li>Company persona</li>
+<li>Hospital or organisational administrative persona</li>
+<li>Pilot angel persona; and</li>
+<li>Patient persona</li>
+</ul>
+<p>Decide which “hat” you are going to wear, remembering that each team member must take on a different persona.</p>
+<p><span style="text-decoration: underline;"><strong><em>The next phase of this workshop will be completed in groups of like personas.</em></strong></span></p>
+<p>Form new groups composed of a people representing a single persona. Within your <strong>Persona Group</strong> consider, discuss, and write user stories that capture what your persona will need from C.1 and C.2.</p>
+<p><strong>Make sure you each have a copy so that you can take it back to your Group. They should all be the same!</strong></p>
+<p>For example,</p>
+<ul>
+<li>as a <em>Pilot</em> what outcomes do you want from the matching process?</li>
+<li>as a<em> Husky Air Scheduler</em> what outcomes do you want from the matching process?</li>
+<li>as a <em>Hospital administrator</em>, what outcomes do you want from the matching process?</li>
+<li>as a <em>Patient </em>what outcomes do you want from the matching process<em>?</em></li>
+</ul>
+<p>Using the following template, for your persona write each user story for C.1. and C.2.</p>
+<p style="margin-left: 30px;">Story Title: ………………………………<br />As a <em>&lt;persona&gt;</em>, I want <i>&lt;something&gt;</i> to so that <i>&lt;beneficial outcome&gt;</i></p>
+<p>Continue writing stories on the product backlog until you have written stories for each of the functions C.1. and C.2. that will let your persona use the system to achieve their goals.</p>
+<p><a href="#Top">Top</a></p>
+<h5>5. The Group/Agile team perspective – Writing User Stories (45 minutes)</h5>
+<p>Reassemble in your groups. Appoint two scribed (with neat writing!)</p>
+<p>Working through the stories one by one <span style="background-color: #f5f6f5;">each individual representing a Persona </span>read out the User Stories for C.1. and then C.2. that they helped create in the previous part of the workshop. Discuss each story. When you all understand the story and are agreed that it is necessary,</p>
+<p>When you all understand the story and are agreed that it is necessary,</p>
+<ol>
+<li>using the template described in the section above, write the story on an index card;</li>
+<li>write the title of the story on a post-it note; and</li>
+<li>place the post-it on the sheet underneath the function it relates to, i.e. under C.1. or C.2.</li>
+</ol>
+<p>Keep doing this until you have worked through all the user stories for each persona.</p>
+<p>Make sure the User Stories are numbered e.g. C.1.1, C.1.2, C.2.1. etc You may find you need to group some user stories together because they are too low level, that is, there is too much detail for this stage of development. </p>
+<p>If there are duplicates, these should be skipped. However, remember to discuss what each individual persona understands the purpose of their story to be so that you're certain that they are in fact duplicates rather than separate tasks that bare a strong similarity to each other.</p>
+<p>Continue until all (unique) activities are recorded, both as user stories on cards and as post-it notes on your user story map.</p>
+<p>When you are happy that your map is "correct", number each story on your index cards to match the number on your map.</p>
+<p><a href="#Top">Top</a></p>
+<h5>6. WITHIN THE GROUP write acceptance criteria (15 minutes)</h5>
+<p>For each user story you have written, write the acceptance criteria, i.e. the criteria that will let you determine completeness or “done” on the reverse side of the index card. Stories may, and frequently do, have more than one criterion associated with them.</p>
+<p>To help with writing these, you might find the following example <sup>2</sup> useful:</p>
+<p style="margin-left: 30px;"><strong>User story title</strong>: Customer withdraws cash.</p>
+<p style="margin-left: 30px;">As a customer,<br />I want to withdraw cash from an ATM<br />So that I don't have to wait in line at the bank.</p>
+<p style="margin-left: 30px;"><strong>Acceptance Criterion 1:<br /></strong>Given that the account is creditworthy,<br />     And the card is valid,<br />     And the dispenser contains cash,<br />When the customer requests the cash,<br />Then ensure the account is debited,<br />     And ensure cash is dispensed <br />     And ensure the card is returned.</p>
+<p style="margin-left: 30px;"><strong>Acceptance Criterion 2:</strong> <br />Given that the account is overdrawn <br />     And the card is valid, <br />When the customer requests the cash, <br />Then ensure the rejection message is displayed,<br />     And ensure cash is not dispensed.</p>
+<p>This story could also be written from the point of view of the bank.</p>
+<p>Keeping your user stories small enough so that all of the acceptance criteria can be written on the reverse of the user story index card helps keep stories simple. If a user story has more than 3-4 acceptance stories, it is likely that the story is too complex and should be broken into multiple smaller stories.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="PartIII"></a>Part III. Class discussion (10 minutes).</h4>
+<p>During the final ten minutes of the workshop, the group will discuss the following.</p>
+<ul>
+<li>Did writing the user stories from the point of view of stakeholder help keep you focused on the what?</li>
+<li>Not everyone writes user stories using a template. It is suggested, however, that using the template helps keep stories focused and simple. Did the template help or hinder you? Why?</li>
+<li>When do you think you would write acceptance criteria for a story? Why?</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Key"></a>Key learnings</h3>
+<p>Students will know that:</p>
+<ul>
+<li>when managing software development different stakeholders (personae) may have quite different requirements for even the smallest part of a software product.</li>
+<li>the agile technique of<span style="background-color: #f5f6f5;"> </span><span style="background-color: #f5f6f5;">just-in-time decomposition of user stories ensures we only delve into detailed analysis and description when we have sufficient knowledge and a need to do so</span></li>
+</ul>
+<p><span style="background-color: #f5f6f5;">Students will understand that:</span></p>
+<ul>
+<li>when managing software development that
+<ul>
+<li>the criticality of individual stakeholder's requirements for business success will vary from function to function</li>
+<li>it is critical to have a communication and stakeholder management plan that has been TESTED to make sure no-one has been missed, to ensure ALL stakeholders are well informed</li>
+<li>it is useful to think of stakeholder groups – Owners, Sponsors, Users, Beneficiaries, Project participants – as all have different communication needs and a person may belong to multiple groups.</li>
+</ul>
+</li>
+<li>when adopting agile approaches to project management that
+<ul>
+<li>just-in-time decomposition requires us to identify only the minimum <strong>detail</strong> of functionality to be included in the next upcoming release </li>
+<li>user stories should be the agenda for discussing with stakeholders what the software product proposes to do</li>
+<li>acceptance criteria provide both product owner (client) and development team with a clear understanding of .the boundaries (scope) of the story, and set what conditions need to be met before the story can be considered complete, that is "<em>done</em>".</li>
+</ul>
+</li>
+</ul>
+<p>Students will be able to</p>
+<ul>
+<li>decompose large user stories into smaller user stories that are meaning <span style="background-color: #f5f6f5;">and useful as they address the key questions of who, what and why</span></li>
+<li>write user stories that have acceptance criteria
+<ul>
+<li>that ensure the eventual software will work as intended not just as coded,</li>
+<li>have a clear pass/fail outcome which will allow the story to meet the "T" in Bill Wake's INVEST characteristics of a "good" user story</li>
+<li>ensure that when coded, the story will meet user acceptance, and, therefore, meet the requirement of "done"</li>
+</ul>
+</li>
+<li>organise the stories contained within a user story map to show priority.</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Resources"></a>Additional Resources</h3>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823812" target="_blank">10 Tips for Writing Good User Stories</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=858232" target="_blank">User Story Essentials Quick Reference Guide</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=858230" target="_blank">Story Splitting Flowchart</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=858231" target="_blank">Story Mapping Concepts Quick Reference Guide</a></li>
+</ul>
+<p></p>
+<p>_________________________________________</p>
+<p>1. <a href="http://blogs.collab.net/agile/user-story-examples-and-counterexamples" target="_blank">http://blogs.collab.net/agile/user-story-examples-and-counterexamples</a> </p>
+<p>2. <a href="https://www.scrumalliance.org/community/articles/2013/september/agile-user-stories" target="_blank">https://www.scrumalliance.org/community/articles/2013/september/agile-user-stories</a></p></div><div class="book_chapter"><a name="ch165542"></a><h2><a name="Top"></a>Initial Project Planning: Developing a User Story Map and determining Minimum Viable Product (MVP)</h2>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#Intro">Introduction</a></li>
+<li><a href="#Objectives">Objectives</a></li>
+<li><a href="#Approach">Approach</a></li>
+<li><a href="#Preparation">Preparation</a></li>
+<li><a href="#USM">Pilot Angels User Story Map (USM) &amp; Minimum Viable Product (MVP)</a><ol>
+<li><a href="#Review">Review the product backlog you created from Workshop #2 (10 minutes)</a></li>
+<li><a href="#Write">Write User-Stories (25 minutes)</a></li>
+<li><a href="#" create="">Create the USM: (25 minutes)</a></li>
+<li><a href="#Verify">Verify and explore alternative stories: (15 minutes)</a></li>
+</ol></li>
+<li><a href="#MVP">Determine the Minimal Viable Product (MVP) (15 minutes)</a><ol>
+<li><a href="#Slice">Slice out your goals</a></li>
+<li><a href="#Mark">Mark the minimum viable product on your story map (15 minutes)</a></li>
+</ol></li>
+<li><a href="#Group">Group discussion (15 minutes)</a></li>
+<li><a href="#Key">Key Learnings</a></li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3>Introduction</h3>
+<p>The purpose of this workshop is to introduce you to and to give you some practice developing a User Story Map and agreeing a Minimum Viable Product, or Minimum Viable Release.</p>
+<p>In previous workshops we learned that in an Agile environment we capture the requirements for the software we are about to build by writing User Stories. We do this with the help and input of the users. We also learned about understanding and defining scope by depicting the “backbone” of the product as a series of very high level functions across the top of a page and we also learned that on the next level we decomposed this backbone into a series of business activities that in combination describe the full business scope of the software product. The user and product owner can read that list of functions and say “Yep! That’s what it needs to do, and no more, no less!” This set of functions together with the backbone are called “the walking skeleton” – because it describes exactly what business functions are in the scope, but as yet there is no detail of the specifics of what is required – no “meat on the bones” so to speak.</p>
+<p>We also learned how to decompose these very high level “epic” user stories into more detailed stories, to add meat to the bones, and how we can keep drilling down through lower levels until we describe a user story that is small enough to “code” in a single Agile “sprint” and big enough to be useful!</p>
+<p>Critically we learned that just like unpacking boxes after a house move, not all epic stories need to be (nor should be) unpacked or decomposed at the very beginning of the project. Many if not all epics can be left as epic user stories until just before we are going to build them – this is called “just-in-time decomposition”.</p>
+<p>In this workshop we are going to layout our user stories under the walking skeleton to create a User Story Map. This creates a powerful forum in which we can discuss, clarify, agree, and change etc. the requirements (user stories) with stakeholders, especially our users. We will also start to build horizontal “swim lanes” of user stories in our map, so that the user stories that need to be delivered to our users in the first software release are at the top of the map, at the head of the queue for delivery. We will work out the minimum number of user stories that need to be in the first release and we will call this the “Minimum Viable Product” (MVP) or “Minimum Viable Release” (MVR).</p>
+<p>This is a critical concept in an Agile approaches because we want to deliver valuable and useable product to our users as soon as possible.</p>
+<p>As shown below, the reason for this is very plain to see – by delivering benefits earlier we quickly accumulate extra financial rewards that are not available with a traditional big-bang approach</p>
+<p><img src="https://wattlecourses.anu.edu.au/pluginfile.php/1044873/mod_book/chapter/165542/ROIonMVP.jpg" width="640" height="360" alt="Return on Investment on MVP" /></p>
+<p>Figure 1 - Return on Investment on the MVP <sup>1</sup></p>
+<p>As we have already learned, user stories are written throughout the life of the project as we discover more detail, or even hitherto unknown but nevertheless critical business functionality (Why do we not consider this a failure of our analysis skills?). While story writing workshops may be held at other times, prior to the start of each release cycle they will frequently be held as part of “backlog grooming”: which confirms the stories that already exist are appropriate, removes those that are no longer appropriate for the goal of that release, and adds new stories based on changes since the previous version of the backlog was created.</p>
+<p>An important part of grooming the backlog is to confirm the goal for the release and to determine the MVP (or minimum viable release) for the release which will allow the release to achieve its goal.</p>
+<p><a href="#Top">Top</a></p>
+<h3>Objectives</h3>
+<ol>
+<li>An introduction to Goal Driven Product Backlogs also known as User Story Maps.</li>
+<li>To practice:
+<ul>
+<li>creating a product backlog and writing user stories following a simple template, and</li>
+<li>building a User Story Map and</li>
+<li>working out and showing which User Stories comprise the Minimum Viable Product.</li>
+</ul>
+</li>
+<li>Through discussion, to learn from other’s experiences.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h3>Approach</h3>
+<ol>
+<li>Prior to the workshop, each student will have read the pre-workshop material and thought about what the workshop activities entail.</li>
+<li>Students will work in groups of 3-5 students and each group will work together to complete the activities based on the Case Study “Pilot Angels”.</li>
+<li>During the final fifteen minutes, all students will participate in a discussion covering the various activities undertaken.</li>
+<li>Using you individual Wattle Wiki, write your weekly Learning Journal entry that summarises the key points you have taken away from the workshop, reflects on why these are important for successful project managers and leaders, and links them to your personal learning goals, other courses, and outside experiences.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Preparation"></a>Preparation</h3>
+<p>Read and digest the following:</p>
+<ul>
+<li>It's All in How your Slice it - Design your project working in layers to avoid half-baked incremental releases (<em><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823798" target="_blank">how_you_slice_if.pdf</a></em>)</li>
+<li>Workshop Husky Air Pilot Angels case study (<a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=869321" target="_blank"><em>CaseStudy.pdf</em></a>)</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<p>Once again, there is a lot to get through in this workshop so you will need to work quickly. You will work in your normal work groups this workshop.</p>
+<h3><a name="USM"></a>Pilot Angels User Story Map (USM) &amp; Minimum Viable Product (MVP)</h3>
+<p>Throughout this workshop you need to keep in mind the agreed PRIORITISED statement of the problem:</p>
+<ol>
+<li><strong>Husky Air/pilot angels efficiency/cost : <br />to reduce the number of phone calls that need to be made to secure a pilot for a job from 6 to (<em>towards</em>) 1.5</strong></li>
+<li>Patient/health care reliability : <br />coordinate convenient and reliable transport to health services for remote patients</li>
+<li>Operate within governance requirements and constraints of regulatory authorities</li>
+</ol>
+<p><strong>Sponsor</strong>: husky air</p>
+<p><strong>Beneficiaries</strong>: pilots, Husky Air scheduler, health care, patient</p>
+<p>Use this information to help guide your decision-making.</p>
+<h4><a name="Review"></a> 1. Review the product backlog you created from Workshop #2: (10 minutes)</h4>
+<p>Last workshop you created a product backlog that covered user tasks related to the key personas of company, hospital or organisation, pilot angel, and patient.</p>
+<p>Refresh your memories of what you determined that these user personas needed the system to do. If necessary, make any changes by amending, adding or deleting to the tasks listed on your backlog.</p>
+<p>Using the USM provided <em>(<a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=870340" target="_blank">HighLevelUSM_WithTriangles.pdf</a></em>), review and agree the User Stories that will be needed in part to address the highest level prioritise goal above (hint: the ones with the red triangles). Make sure you understand why these stories and not the others are required.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Write"></a>2. Write User-Stories (25 minutes)</h4>
+<p>Review the User Stories that are needed to address the highest priority goal. Are these ones you wrote last workshop?</p>
+<p>If so, review each one and make sure you all understand what is required and that each contains the required information.</p>
+<p>For those story epics which you have not yet decomposed, decompose them into those component user stories that are required for a minimum viable first release, and one or more user stories that comprise/complete the remainder of the epic.</p>
+<p>Write each story on an index card. Make sure each card (user story) contains</p>
+<p>ON THE FRONT</p>
+<ul>
+<li>A unique identifier for the user story (e.g. C1.1.1)</li>
+<li>The persona (e.g. as a scheduler)</li>
+<li>The required outcome (e.g. I want to match a pilot to a job before calling him/her)</li>
+<li>The reason why/benefit (e.g. so that I make fewer phone calls and am more efficient)</li>
+</ul>
+<p>ON THE REVERSE</p>
+<ul>
+<li>Write any acceptance criteria you have identified (e.g. on average no more than 1.5 phone calls to find a pilot/plane who is available and suitable and can satisfy other criteria around patient care)</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Create"></a>3. Create the USM: (25 minutes)</h4>
+<p>Now write post-it-notes representing the user stories you have written. Post-it notes will have the name of the story, the story’s unique identifier and the persona on it.</p>
+<p>Using the post-it notes and the Pilot Angels USM provided for this workshop, lay out your user story map on the provided butcher paper ensuring you have first drawn the complete backbone and walking skeleton. Keep the narrative order of the story map as you lay it out.</p>
+<p>Remember: at the top of the story map, you have your summary or goal-level tasks; below that you have your functional tasks; and below the functional tasks you place sub-tasks related to each functional task.</p>
+<p>Place the post it notes you have just written on your USM in the appropriate column. Make sure you arrange them in swim lanes according to the priority – do we need to provide this function in the very first release of the software.</p>
+<h3>Explore your map</h3>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Verify"></a>4. Verify and explore alternative stories: (15 minutes)</h4>
+<p>Walk through your map, letting it tell you its story. Are there any bits missing?</p>
+<p>You need to verify that you haven’t missed any tasks or activities. Think of appropriate scenarios and see whether they could be completed using the tasks and activities you have listed. If anything is missing, you will need to add it.</p>
+<p>Most importantly, ask yourselves, does your solution help solve the problem you identified in step one? If not, why not? What do you need to change to ensure that it will help resolve the identified problem? Make the necessary changes</p>
+<p>As part of your verification of your map. You need to explore alternative stories. For example, what happens if you do not have all the information you need for a patient? How will you handle that? Can you break the task of recording patient details into two sub-tasks: one that contains the important identifying data such as name and contact details and a second one that contains the collection of remaining data?</p>
+<h3><a name="MVP"></a>Determine the Minimal Viable Product (MVP) (15 minutes)</h3>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Slice"></a>5. Slice out your goals</h4>
+<p>One way to help determine which activities are critical to the system and therefore will form part of the MVP, is to determine the absolute minimum sub-set of summary tasks and sub-tasks that will enable you to solve the problem you have identified in step 1.</p>
+<p>Work through your map moving post-it-notes relating to non-essential tasks to the bottom of your map.</p>
+<p>Remember: one of the key benefits of using a story map to prioritise tasks is that tasks are not discarded; they are only deemed not part of the MVP at this point in the project.</p>
+<p>One of the key goals that the users need the system to handle is an emergency.</p>
+<p>The system must be able to handle accepting a call from a doctor or hospital/organisation advising that they have a patient or a body part that needs to be taken immediately to a designated destination.</p>
+<p>This must be able to be set up in less than 30 minutes.</p>
+<p>Remember it might in fact be a number of goals <img class="emoticon" alt="smile" title="smile" src="https://wattlecourses.anu.edu.au/theme/image.php/anumore/core/1464187245/s/smiley" /></p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Mark"></a>6. Mark the minimum viable product on your story map (15 minutes)</h4>
+<p>Once you have determined the MVP draw a line across the map and ensure that all tasks that are required for the MVP are above that line, while all other tasks are below the line.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Group"></a>Group discussion (15 minutes)</h4>
+<p>Discuss what you have discovered about identifying the MVP. Are there any rules of thumb you could employ in the future?</p>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Key"></a>Key learnings</h3>
+<p>Students will know that:</p>
+<ul>
+<li>when managing software development different stakeholders (personae) will likely have different requirements for what must be delivered i.e. what is essential to deliver value to them for the software product</li>
+<li>one of the characterisations of Agile project techniques compared with traditional project techniques is that software product is delivered in smaller increments called releases.</li>
+</ul>
+<p>Students will understand that:</p>
+<ul>
+<li>when managing software development, rarely do all the functions need to be delivered at the same time, and a software product can be delivered in useful stages, that each deliver benefits to some stakeholders</li>
+<li>when adopting agile project techniques
+<ul>
+<li>releases are arranged in business priority (benefit) order, so the most important (beneficial) functions get delivered first.</li>
+<li>priority needs to be negotiated and agreed with all stakeholders – especially the sponsor(s)</li>
+<li>full benefits will be realised over a number of releases, but that each release will add value.</li>
+<li>releases must be useable by the users in their business day, and not just something extra they need to do in order to meet the development team’s needs. This keeps the users enthusiastic and engaged, and provides valuable early feedback to the development team. This means development can cease at any time, knowing that we have already delivered the most important functions and benefits.</li>
+</ul>
+</li>
+</ul>
+<p>Students will be able to</p>
+<ul>
+<li>create a plan that is prioritised according to benefits to the business and which enables staged delivery</li>
+<li>create a plan that delivers real, measurable value to the business with each release.</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<p>__________________________________</p>
+<p>1  David Needham</p></div><div class="book_chapter"><a name="ch165544"></a><h2><a name="Top"></a>Initial Project Planning - Estimation and Delivery of the MVP</h2>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#Intro">Introduction</a></li>
+<li><a href="#Poker">Planning Poker</a></li>
+<ul>
+<li><a href="#How">How to play</a></li>
+<li><a href="#When">When to play</a></li>
+<li><a hred="#Benefits">The benefits of using planning poker to estimate</a></li>
+</ul>
+<li><a href="#Objectives">Workshop Objectives</a></li>
+<li><a href="#Approach">Approach</a></li>
+<li><a href="#Prep">Preparation</a></li>
+<li><a href="#Work">Workshop</a></li>
+<ul>
+<li><a href="#Stories">I. Re-familiarise yourselves with your stories and ensure David’s scenarios are covered by your story map (10 minutes)</a></li>
+<li><a href="#Baseline">II. Pick a story to act as your “baseline” story: (10 minutes)</a></li>
+<li><a href="#Estimate">III. Estimate your stories (60 minutes)</a></li>
+<li><a href="#Long">IV. Estimate how long it will take to deliver the first release (15 minutes)</a></li>
+<li><a href="#Discussion">V. Discussion (15 minutes)</a></li>
+</ul>
+<li><a href="#Key">Key learnings</a></li>
+<li><a href="#Resources">Resources</a></li>
+</ul>
+<h3><a name="Intro"></a>Introduction</h3>
+<p>The purpose of this week's workshop is to introduce you to and give you practice in estimating User Stories. Estimation is not easy. Some even call it a “black art”. I highly recommend Steve McConnell’s book “Software Estimation: Demystifying the Black Art”.</p>
+<p>In previous workshops, in addition to learning that project requirements are captured in user stories and that the scope of the complete software product is documented by the backbone and walking skeleton of the User Story Map (USM), we have learned how to use the USM to help determine which stories need to be included in the MVP of the first release -- the release that allows the client and the development team to confirm their understanding of the overall goals of the project.</p>
+<p>In this workshop we are going to learn how to estimate the size of the user stories you created and documented in Workshop #5 (User Story Map and the MVP), which have been combined into the User Story Map with Minimum Viable Product provided by your tutor at the beginning of this workshop. We are going to do our estimation using a technique called "Planning Poker".</p>
+<p>According to Mike Cohn at (http://www.mountaingoatsoftware.com/agile/planning-poker/) Planning Poker is a consensus-based, agile estimating and planning technique.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Poker"></a>Planning Poker</h4>
+<p>The whole team, including the product owner, take part. Each member of the development team (estimators) has a set of Planning Poker cards whose values are used to represent the number of story points. If a team doesn’t use story points for estimate, the values can represent ideal days, or other units in which the team estimates.</p>
+<p>The game begins with the product owner reading out a user story or describing a desired feature. The product owner then answers questions and provides additional information required by the estimators. Discussion of the story or feature continues until everyone feels comfortable that they fully understand what is required and the complexity of the story. When everyone is happy with their level of understanding, each estimator privately selects a card bearing the number of story points that represents their estimate of the size of the story under discussion. Estimators keep their cards hidden. Once all members have made their choice, all cards are revealed simultaneously.</p>
+<p>If all the estimators have chosen the same value this becomes the estimate for that story. Where complete agreement doesn't exist, further discussion takes place. Discussion centres on the estimates themselves with estimators sharing their reasons for having chosen a particular size. The product owner provides what further information the team requires to help them understand what is involved. A further round of estimating takes place with each estimator selecting a card (which may be different from round one). Again once everyone has made their selection, all cards are revealed simultaneously.</p>
+<p>The process of discussion and voting is repeated until consensus is achieved or until the estimators decide that estimating of this story should be held over until further required information is provided.</p>
+<p>The product owner’s role is to read out the stories, to answer questions and to provide sufficient detail so that the team feels confident to estimate the size of the story. While the product owner participates and has an important role in the estimating workshop, they do not take part in the estimation itself.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="How"></a>How to play planning poker</h4>
+<p>There are a number of ways you can “play” this game:</p>
+<ul>
+<li>Planning Poker cards;</li>
+<li>Download and install software on your mobile device (I have used artArmin Scrum Poker Cards (Agile) for android. There are a number of apps available for Apple, but I have not used these. The apps work very much like the cards, except of course you do not have to make or purchase the cards and you cannot lose one of them! or</li>
+<li>Create an account and use http://www.planningpoker.com/ – free from Mountain Goat Software. This would be great to use in the workplace.</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h4><a name="When"></a>When to play planning poker</h4>
+<p>Planning poker can be played at multiple points throughout a project’s life. Initially, it is used when the product backlog is written to provide estimates used with scoping the project. As product user stories can be added to the product backlog through the project’s life, estimating is usually carried out at least once per release cycle. Some teams will use planning poker more frequently than this, once per iteration when beginning to plan for the next iteration.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Benefits"></a>Benefits of playing planning poker to estimate</h4>
+<p>It is claimed that using planning poker to estimate will improve the accuracy of a team’s estimation. One reason for this is that the complete team, composed of cross-functional experts, is involved. Additionally, the discussion that takes place during planning poker ensures better understanding by team members. Furthermore, being required to justify your decisions to your peers helps improve accuracy and helps compensate when information is missing. This is important on an agile project because the user stories being estimated are often intentionally vague.</p>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Objectives"></a>Workshop Objectives</h3>
+<p>To introduce you to estimating using planning poker and story points</p>
+<ol type="1">
+<li>To practice:
+<ul>
+<li>Estimating the relative size of user stories using Planning Poker and Story Points. <br />This will be done by estimating how large each of the 11 User Stories of the MVP are in relation to each other.</li>
+<li>Converting story points into time. <br />Using a Velocity provided by your tutor to convert Story Points to real time, estimate how long in time it will take to deliver the MVP as a first release to the users.</li>
+<li>Calculating the range of time, from best case to worst case scenario, that will likely be required to deliver the MVP.</li>
+<li>Determining how many iterations will be required to implement the MVP. <br />This will be done using how long each iteration( or SPRINT) will take, you will estimate how many iterations it will take to deliver the MVP.</li>
+</ul>
+</li>
+<li>To develop an understanding of the benefits of planning poker and how to conduct an estimation workshop using planning poker.</li>
+<li>Through discussion to learn from each other’s experiences.</li>
+<li>For each individual to summarise for themselves the key points they have taken away from the class and why these are important for successful project managers and leaders.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Approach"></a>Approach</h3>
+<ol type="1">
+<li>Prior to the workshop, each student will have read the pre-workshop material, including these instructions and thought about what the workshop activities entail.</li>
+<li>Students will work in groups of 3-5 students and the workshop will be broken into two parts.</li>
+<li>During the first hour and a half, each group will work together to complete the activities.</li>
+<li>During the final 15 minutes all students will participate in a discussion covering the various activities undertaken.</li>
+<li>Using your individual Wattle Wiki, write your weekly Learning Journal entry that summarises the key points you have taken away from the workshop, reflects on why these are important for successful project managers and leaders, and links them to your personal learning goals, other courses, and outside experiences.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Prep"></a>Preparation</h3>
+<p>Read and digest the following:</p>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=871528" target="_blank">Let’s play planning poker</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823669&amp;chapterid=165508" target="_blank">Lecture notes for week 8</a></li>
+<li>Refamiliarise yourself with the <a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823670&amp;chapterid=165538" target="_blank">Husky Air Pilot Angels scenario</a>.</li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=871533" target="_blank">High-level USM with MVP</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=871533" target="_blank">MVP User Story decomposition</a></li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Work"></a>Workshop</h3>
+<p>This week’s exercise is based on the Husky Air scenario, the User Stories you created and documented in<a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823670&amp;chapterid=165542" target="_blank"> Workshop #5 </a>(User Story Map and the MVP) which have been combined into the User Story Map with Minimum Viable Product provided by your tutor at the beginning of this workshop. During this Workshop we shall</p>
+<ul>
+<li>a) Estimate how large each of the 11 User Stories of the MVP are in relation to each other, using Planning Poker and Story Points.</li>
+<li>b) Using a Velocity provided by your tutor to convert Story Points to real time, estimate how long in time it will take to deliver the MVP as a first release to the users.</li>
+<li>c) Using how long each iteration or SPRINT will typically take, estimate how many iterations it will take.</li>
+</ul>
+<p>During class students may estimate using:</p>
+<ul>
+<li>the supplied poker cards OR</li>
+<li>the whole team can choose to use one of the mobile or on-line tools. If you are planning to use either of the latter you should down load these and set up your accounts prior to the commencement of class.</li>
+<li>I have used artArmin Scrum Poker Cards (Agile) for android. (There are a number of apps available for Apple, but I have not used these) These work very much like the cards, except of course you do not have to make or purchase the cards and you cannot lose one of them! OR</li>
+<li>Create an account and use http://www.planningpoker.com/ – free from Mountain Goat Software. This would be great to use in the workplace.</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Stories"></a>I. Re-familiarise yourselves with your stories and ensure David’s scenarios are covered by your story map (10 minutes)</h4>
+<p>Given that the USM and MVP are provided to you, take a few minutes to refresh your memories relating to the stories your team created in the last workshop and confirm they are substantially the same or query the differences with your tutor. During this Workshop, we shall be using the 11 User Stories in the MVP only.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Baseline"></a>II. Pick a story to act as your “baseline” story: (10 minutes)</h4>
+<p>When familiarising yourselves with the scenario and the stories your team created for the MVP, decide upon a story that you can use as the story against which you compare your stories. This story needs to be straightforward and not overly complex and one that the whole team understands well. On the other hand, it does not want to be too simple. Following the steps described in section <em>III </em>Estimate<em> your stories,</em> agree an appropriate number of story points for this story. Record estimate on the index card for that story and on the post-it note representing the story on your USM.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Estimate"></a>III. Estimate your stories (60 minutes)</h4>
+<ol type="1">
+<li>Make sure that each estimator has a deck of cards.</li>
+<li>As we do not have a product owner, take turns to read a story, suggest appropriate acceptance conditions and answer any questions the estimators may have. The team should continue to discuss the story, especially acceptance conditions until they feel they have sufficient information to enable them to estimate its size. Make sure all appropriate information is recorded on the index card for that story. The depth of understanding team members possess will affect the quality of the estimates.</li>
+<li>From their deck of cards, each estimator selects the card whose number represents their personal estimate in story points of the size of the story. Estimators will need to consider whether the current story is larger or smaller than the “baseline” story and by how much. When you have selected your card, place it face down on the table in front of you. When everyone has finished estimating, turn all the cards over at the one time. This is important.</li>
+<li>If there isn’t consensus, the owners of the high and low estimates start the discussion by providing the reasons for their estimates. All estimators should participate in the discussion. The discussion should continue until each estimator feels sufficiently confident to estimate size in story points. Remember you are comparing the size of this story with the size of your baseline story; is it larger or smaller and by how mow?The product owner may be asked to provide additional information and to help resolve misunderstandings.</li>
+<li>Repeat from step 3 until the estimates converge.</li>
+<li>Once you have reached consensus complete the details for the story on the index card.</li>
+<li>For each story repeat steps 2 to 6 until you have estimated all your team’s MVP stories.</li>
+</ol>
+<p><strong>Important</strong>: If, after three rounds of Planning Poker, you have any stories upon which you have not reached consensus, put them to one side and return to them when you have completed estimating all other stories. At the end of the workshop, should you still have any stories upon which you cannot agree, note them on your worksheet and include brief detail related to the point(s) of contention and the additional information required to enable you to estimate the story with confidence.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Long"></a>IV. Estimate how long it will take to deliver the first release (15 minutes)</h4>
+<p>Sum the points for each story. The total number of story point is how large the MVP is in Story Points. Write this on your USM to the right or left side of the map, but within the boundary of the MVP.</p>
+<p>Your tutor will now provide your team with a velocity – how many story points your team is predicted to be able to deliver in an iteration of two weeks duration. Write this on your USM near the estimated total number of story points for the MVP.</p>
+<p>In reality, when you have no historical data upon which to base your calculations, the initial estimation of velocity will be provided by an experienced leader of your agile team based on her knowledge of the environment in which you are working, her assessment of the strength of the team, and her assessment of the complexity of the software project, difficulties, and risks likely to be experienced.</p>
+<p>Using the provided velocity, calculate how many iterations it will take to deliver your first release and how many weeks that will be. Write this on your USM near the total number of story points and your velocity</p>
+<p>Now calculate the likely range of iterations and weeks it will take to deliver the MVP. Using the <a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823717" target="_blank">Boehm/McConnell Cone of Uncertainty</a> calculate the</p>
+<ul>
+<li>minimum number of iterations and weeks -- the best case scenario</li>
+<li>maximum number of iterations and weeks -- the worst case scenario</li>
+</ul>
+<p>Write these on your USM near the total number of story points, your velocity, and your "most likely" scenario.</p>
+<p><a href="#Top">Top</a></p>
+<h4><a name="Discussion"></a>V. Discussion (15 minutes)</h4>
+<p>During the final 15 minutes of the workshop, the group will discuss the following:</p>
+<ul>
+<li>What sorts of issues did you encounter when using planning poker to estimate your user stories?</li>
+<li>When and where would you recommend using planning poker to estimate? Why?</li>
+<li>Do you think there would there be situations when planning poker might not be appropriate? What might these be and why would planning poker not be suitable?</li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Key"></a>Key learnings</h3>
+<p>Students will know that: </p>
+<ul>
+<li>when managing software development estimating the size of and time to complete the project with known and well-understood confidence levels is important to project success</li>
+<li>agile approaches to project management frequently use relative estimation to estimate size (effort required, complexity, risk, and required quality) which is then converted into time</li>
+<li>relative estimation provides increased accuracy in estimation</li>
+</ul>
+<p>Students will understand that:</p>
+<ul>
+<li>when managing software development,
+<ul>
+<li>actual progress must be tracked against planned project and the plans adjusted when and where necessary</li>
+</ul>
+</li>
+<li>agile project management techniques
+<ul>
+<li>estimate project size frequently - when planning a release as well as when planning for each iteration</li>
+<li>do no require the project to be re-estimated when project velocity changes, only the time to complete need be recalculated</li>
+</ul>
+</li>
+</ul>
+<p>Students will be able to</p>
+<ul>
+<li>conduct a story estimation workshop using planning poker and estimating story size using story points</li>
+<li>convert the size of a release, as measured by story points, into time using a calculation of team velocity</li>
+<li>determine how many iterations will be needed to deliver a release based on its size and the team's calculated velocity</li>
+<li>provide a date range for the estimated length of time it will take to implement and the confidence interval associated with that date range.</li>
+</ul>
+<h3><a name="Resources"></a>Resources</h3>
+<ul>
+<li><a href="http://wattlecourses.anu.edu.au/mod/resource/view.php?id=823742">Husky Air Pilot Angels User Story Map with Minimum Viable Product </a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=871533" target="_blank">Decomposition of user stories comprising the MVP</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823717" target="_blank">The Boehm/McConnell Cone of Uncertainty</a></li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h3>Additional Resources</h3>
+<ul>
+<li><a href="http://www.mountaingoatsoftware.com/blog/3-roles-that-need-to-be-involved-in-agile-estimating-with-planning-poker">3 Roles That Need to be Involved in Agile Estimating with Planning Poker</a> (http://www.mountaingoatsoftware.com/blog/3-roles-that-need-to-be-involved-in-agile-estimating-with-planning-poker)</li>
+<li><a href="http://www.mountaingoatsoftware.com/blog/2-times-to-play-planning-poker-and-1-time-not-to">2 Times to Play Planning Poker and 1 Time Not To</a>  (http://www.mountaingoatsoftware.com/blog/2-times-to-play-planning-poker-and-1-time-not-to)</li>
+<li><a href="http://www.mountaingoatsoftware.com/blog/establishing-a-common-baseline-for-story-points">Establishing a Common Baseline for Story Points</a> (http://www.mountaingoatsoftware.com/blog/establishing-a-common-baseline-for-story-points)</li>
+<li><a href="http://www.mountaingoatsoftware.com/blog/in-defense-of-large-numbers">In Defense of Large Numbers</a> (http://www.mountaingoatsoftware.com/blog/in-defense-of-large-numbers)</li>
+<li><a href="http://www.mountaingoatsoftware.com/agile/planning-poker">Planning Poker - Frequently Asked Questions</a> (http://www.mountaingoatsoftware.com/agile/planning-poker)</li>
+<li><a href="http://www.mountaingoatsoftware.com/presentations/agile-estimating">Agile Estimating</a> (http://www.mountaingoatsoftware.com/presentations/agile-estimating) - -provides access to a number of resources to do with estimation from Mike Cohn's Mountain Goat Software site <a href="http://wattlecourses.anu.edu.au/mod/assign/view.php?id=823941" style="font-size: 13.6000003814697px; line-height: 1.4;"><span class="instancename" style="font-size: 13.6000003814697px; line-height: 1.4;"> </span></a></li>
+</ul>
+<p><a href="#Top">Top</a></p></div><div class="book_chapter"><a name="ch165546"></a><h1><a name="Top"></a>Workshop #7 -- Planning the Schedule: Releases and Iterations</h1>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#Intro">Introduction</a></li>
+<li><a href="#Objectives">Workshop Objectives</a></li>
+<li><a href="#Prep">Preparation</a></li>
+<li><a href="#Approach">Approach</a></li>
+<li><a href="#Activities">Workshop Activities</a>
+<ul>
+<li>I.  Refamiliarise yourselves with the story map (10 Minutes)</li>
+<li>II. Release Planning (60 Minutes)</li>
+<ul>
+<li>Understand the goals of the system</li>
+<li>Distribute goals across releases </li>
+<li>Identify user stories for each goal</li>
+</ul>
+<li>III. Estimated Project Completion Timeframe (20 Minutes)</li>
+</ul>
+</li>
+<li><a href="#Key">Key Learnings</a></li>
+<li><a href="#Resources">Additional Resources</a></li>
+</ul>
+<p><a href="#Top">Top</a></p>
+<h2>Introduction</h2>
+<p>In this workshop, we will be completing our understanding of the project’s size and scope through estimation of the number of releases will be required and to calculate the length of time that is likely to take.</p>
+<p>Using a User Story Map (USM) also known as a goal-driven product backlog, in Workshop #3 we defined the project's scope through the creation of the backbone and walking skeleton. In Workshop #4, the large user stories or epics which represent the user tasks in the walking skeleton were decomposed into smaller stories. Including acceptance criteria with the stories we wrote in workshop #4 provided us with sufficient detail for us, in Workshop #5, to work out exactly which stories needed to be included in the minimum viable product (MVP). Using the MVP (Workshop #5) and the detail contained in the user stories we had written (Workshop #4) we had sufficient detail to estimate the size of the MVP and to calculate how long it was likely to take to deliver.</p>
+<p>This workshop will complete our understanding of the project's size and scope through planning which stories will be delivered in which release, the size of each release, and how long it is likely to take to deliver the complete project. At the end of this workshop, you will have a definition of the scope of the project, including a first cut schedule. You will also have a clear understanding of the MVP, and which features will be delivered with which release and which of the project goals each release addresses.</p>
+<p></p>
+<p><a href="#Top">Top</a></p>
+<h2><a name="Objectives"></a>Workshop Objectives</h2>
+<ol>
+<li>To gain some experience developing a schedule using a User Story Map (USM):</li>
+<ul>
+<li>understand the steps involved (estimation, dependencies, resourcing, effort versus duration)</li>
+<li>understand some of the issues encountered when planning a project schedule</li>
+</ul>
+<li>To discuss each group's agreed findings as a whole class.</li>
+<ul>
+<li>Through discussion:
+<ul>
+<li>To understand what scope management is.</li>
+<li>To understand difficulties likely to be encountered.</li>
+<li>To identify the strengths and weakness of this approach to scope management and so to begin to understand that the “best” approach is the one that works in a particular situation and that any one approach will not work in all situations.</li>
+</ul>
+</li>
+</ul>
+<li>For each individual through reflection to consolidate the key points of learning they have taken away from the class.</li>
+</ol>
+<p><a href="#Top">Top</a></p>
+<h3><a name="Prep"></a>Preparation</h3>
+<p>Prior to the workshop, you should refamiliarise yourself with the concepts of underpinning MVP, Story Maps, <span class="nolink">Estimating Velocity</span> and Release and Iteration planning as covered in the notes posted for </p>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823669&amp;chapterid=165507">week 7</a>,</li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823669&amp;chapterid=165508">week 8</a> and</li>
+<li>especially <a href="https://wattlecourses.anu.edu.au/mod/book/view.php?id=823669&amp;chapterid=165509">week 9</a> in your Wattle e-Book. </li>
+</ul>
+<p></p>
+<p><a href="#Top">Top</a></p>
+<h2><a name="Approach"></a>Approach</h2>
+<p>Throughout this workshop you need to keep in mind the agreed PRIORITISED statement of the problem:</p>
+<ol>
+<li><strong>Husky Air/pilot angels efficiency/cost : <br />to reduce the number of phone calls that need to be made to secure a pilot for a job from 6 to (<em>towards</em>) 1.5</strong></li>
+<li>Patient/health care reliability : <br />coordinate convenient and reliable transport to health services for remote patients</li>
+<li>Operate within governance requirements and constraints of regulatory authorities</li>
+</ol>
+<p><strong>Sponsor</strong>: husky air</p>
+<p><strong>Beneficiaries</strong>: pilots, Husky Air scheduler, health care, patient</p>
+<p>Use this information to help guide your decision-making.</p>
+<p></p>
+<h3>I. Re-familiarise with the story map (10 minutes)</h3>
+<p>Given you have been provided with a complete USM, with MVP, and all the estimated size for all stories included on the map, take a few minutes to look over the map and refresh your memories relating to the stories so that the whole team is comfortable with exactly what is included in the map.</p>
+<p></p>
+<p><a href="#Top">Top</a></p>
+<h3>II.  Release Planning (60 minutes)</h3>
+<h4>1.   Understand the goals of this system and their business value – 2<i>0 minutes</i></h4>
+<p><span style="background-color: #ffffff;">Your tutor will provide you with a list of goals (the same goals as above) and a list of the sub-goals they break down to. In your groups discuss the sub-goals and decide on their relative priority considering 1) the relative priority of the high-level goal to which the sub-goal belongs and 2) the need to deliver business value as early as possible in the development process. This requirement to deliver value early applies to each and every release, not just the MVP or Release 1. Note the relative priorities.  From now on, let's refer to the sub-goals as the goals and the high-level goals as the high-level goals!</span></p>
+<p><a href="#Top">Top</a></p>
+<h4>2.   Distribute goals across releases according to VALUE – 2<em></em><i>0 minutes</i></h4>
+<p>In your group, you have now decided  the goals and their perceived value that teams have identified. Through a brief discussion with the workshop as a whole,  agree on a composite set and priorities. Once the set has been agreed, decide how many releases will be required.</p>
+<p>Draw table 1 – Release Planning – on your story map. Enter the goals down the vertical axis. The columns represent the releases. Distribute the goals across the releases so that Release 1 contains the goals that represent the value of the Product MVP, i.e. anything less than this will not deliver value to Husky Air. Second and subsequent releases contain valuable, but lower priority goals.</p>
+<p>When complete your table should look something like this:<b></b></p>
+<table border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;"><b>Goal ID</b></span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;"><b>   Goal Name</b></span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"><b>  Release 1</b></span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"><b>Release 2</b></span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"><b>Release 3</b></span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"><b>Release 4</b></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 1</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">   Most valuable goal</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">   X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 2</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">   2<sup>nd</sup> most valuable goal</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">   X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 3</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">   3<sup>rd</sup> most valuable goal</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 4</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">   4<sup>th</sup> most valuable goal</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"> </span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;">    X</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p align="center"><em>Table 1 - Release Planning</em></p>
+<p><a href="#Top">Top</a></p>
+<h4>3.   Identify User Stories for each goal – <em>20</em><i> minutes</i></h4>
+<p>Annotate the provided user story map, with the <b>highest priority goal</b> to which each story contributes. (Stories may contribute to a number of goals, so it is important to be clear to which goal they contribute ensuring you identify all stories that contribute to a particular goal.)</p>
+<p>Now add up the story points of all stories that add to each goal and add them to your table. Sum the story points for each release. Add this information to the table on your map.</p>
+<p>Your table should now look something like this:</p>
+<table border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;"><b>Goal ID</b></span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;"><b>Goal Name</b></span></p>
+</td>
+<td valign="top" width="106">
+<p style="text-align: center;"><span style="font-size: small;"><b>Release 1 </b></span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"><b>Release 2</b></span></p>
+</td>
+<td style="text-align: center;" valign="top" width="106">
+<p><span style="font-size: small;"><b>Release 3</b></span></p>
+</td>
+<td valign="top" width="106">
+<p style="text-align: center;"><span style="font-size: small;"><b>Release 4</b></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 1</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">Most valuable goal</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       50 </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       25</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       25</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 2</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">2<sup>nd</sup> most valuable goal</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       30 </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       45</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 3</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">3<sup>rd</sup> most valuable goal</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       35</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       10</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;">Goal 4</span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;">4<sup>th</sup> most valuable goal</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"> </span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       10</span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;">X       30</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="92">
+<p><span style="font-size: small;"><b> </b></span></p>
+</td>
+<td valign="top" width="251">
+<p><span style="font-size: small;"><b>TOTAL STORY POINTS</b></span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"><b>80</b></span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"><b>60</b></span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"><b>65</b></span></p>
+</td>
+<td valign="top" width="106">
+<p align="right"><span style="font-size: small;"><b>55</b></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p align="center"><em>Table 2 - Release Planning: Story Points per Release</em></p>
+<p></p>
+<p><a href="#Top">Top</a></p>
+<h3>II.  Estimated Project Completion Timeframe (20 minutes)</h3>
+<h4><span style="color: inherit; font-family: inherit;">4.   </span>Estimate<span style="color: inherit; font-family: inherit;"> project completion timeframe – <em>2</em></span><i style="color: inherit; font-family: inherit;">0 minutes</i></h4>
+<p><strong>Sum the story points for each release</strong>: this will give you the total size of the project. Add this to your map</p>
+<p><strong>Iterations per release</strong></p>
+<p>Given we have no historical data for your team yet, we will assume a velocity of 18. Historically that is the average number of points completed by software development teams at your company. Calculate the number of iterations per release. Write this on your worksheet.</p>
+<p>For the purposes of this workshop, you can assume that there are no public holidays, that no one will take leave and that iteration length is 10 working days, that is two weeks.</p>
+<p><strong>Earliest and latest release dates</strong></p>
+<p>Next, using the provided cone of uncertainty and the assumed velocity of 18 story points per iteration, calculate the earliest and latest release dates for each release. Determine the earliest and latest completion date for the whole project.</p>
+<p>You now have the first “big picture” view of the scope of the project and the length of time it will take to complete.</p>
+<p><a href="#Top">Top</a></p>
+<h3><span style="background-color: #ffffff;">Key Learnings</span></h3>
+<p>Students will know that: </p>
+<ul type="disc">
+<li>when managing software development, estimating the size of and time to complete the project with known and well-understood confidence levels is important to project success</li>
+<li>agile approaches to project management resolve to deliver the product through frequent releases to the users.</li>
+<li>starting from the first release, the agile approach delivers business functions of decreasing value to the business, from the most valuable to the least, as determined by the agreed business goals of the project.</li>
+</ul>
+<p>Students will understand that:</p>
+<ul type="disc">
+<li>when managing software development,</li>
+<ul type="circle">
+<li>actual progress must be tracked against planned progress and the plans adjusted when and where necessary</li>
+</ul>
+<li>agile project management techniques</li>
+<ul type="circle">
+<li>use just-in-time-decomposition which means that many user stories will remain as “epics” until they are about to be developed. Breaking down these stories into greater detail will involve new “discoveries” requiring re-estimation.</li>
+<li>re-estimate <b>project </b>size frequently - when planning a release as well as when planning for each iteration</li>
+<li>do not require the project to be re-estimated when project velocity changes, only the time to complete need be recalculated</li>
+</ul>
+</ul>
+<p>Students will be able to use an appropriate approach to:</p>
+<ul type="disc">
+<li>determine the priority of the (sub-)goals for the project using the overall business goals</li>
+<li>determine with which sub-goal each user story is best associated and therefore prioritised</li>
+<li>determine how many releases will be needed to deliver the whole project</li>
+<li>using the team's calculated velocity, calculate how long the delivery of each release will take and therefore the overall target dates for the project</li>
+<li>provide a date range for the estimated length of time it will take to implement and the confidence interval associated with that date range.</li>
+</ul>
+<h3><a name="Resources"></a>Additional Resources</h3>
+<ul>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=823717" target="_blank">Cone of Uncertainty</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=874330" target="_blank">Pilot Angels goals and sub-goals</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=874327" target="_blank">USM with MVO including story points</a></li>
+</ul></div><div class="book_chapter"><a name="ch169776"></a><p><span style="color: inherit; font-family: inherit; font-size: 31.5px; font-weight: bold; line-height: 40px;">Workshop #8 -- Iteration planning <sup>1 &amp; 2</sup></span></p>
+<p><strong>CONTENTS</strong></p>
+<ul>
+<li>Introduction </li>
+<li>Objectives </li>
+<li>Preparation </li>
+<li>Approach </li>
+<li>Workshop Activities</li>
+<ol>
+<li>Adjust your priorities</li>
+<li>Identify an iteration goal </li>
+<li>Select a user story</li>
+<li>Split the story into tasks</li>
+<li>Estimate the tasks</li>
+<li>Sum the estimates</li>
+<li>Ask for team commitment</li>
+<li>Repeat until your iteration is complete</li>
+</ol>
+<li>Key Learning </li>
+</ul>
+<h3>Introduction</h3>
+<p>In this final workshop, we will complete the planning cycle, by planning an iteration for the Husky Air project.</p>
+<p>At the end of release planning, we have loosely allocated our coarsely grained stories to releases. This provides us with enough confidence to base our actions and decisions on it and provides a high-level view of how the team plans to deliver the most valuable product they can. It does not, however, provide sufficient detail to allow the development team to drive the work for the iteration.</p>
+<p>The iteration planning meeting, which usually lasts about an hour, produces the iteration plan. An iteration plan, which may be a spreadsheet or a set of note cards with a single task written on each card, provides a focused and detailed view of exactly what work is necessary to implement completely those stories that are included in the iteration. Importantly the detail relates only to the stories to be implemented in that iteration.</p>
+<p><strong>Example Iteration Plans showing required detail</strong></p>
+<p><strong><img src="https://wattlecourses.anu.edu.au/pluginfile.php/1044873/mod_book/chapter/169776/MC_IterationPlan.png" width="622" height="410" alt="Mike Cohn Sample Iteration Plan" />3</strong></p>
+<p></p>
+<p><img src="https://wattlecourses.anu.edu.au/pluginfile.php/1044873/mod_book/chapter/169776/MC_IterationPlan_2.png" width="515" height="386" alt="Mike Cohn - Iteration planning" />4</p>
+<p></p>
+<p>The whole development team (analysts, architects, programmers, testers, among others) attends the iteration planning meeting. The customer (product owner) also attends to answer any questions about the detail of the story that are likely to arise.</p>
+<p>Input to the iteration planning meeting is the previously prioritised stories in the backlog. The simplest approach to iteration planning is to take the next story from the top of your backlog, i.e. the story with the highest priority. However, business need and project conditions change quickly so it is always worth considering whether the priorities are still appropriate. Remember, you will go through this process during iteration planning for each iteration.</p>
+<p>The simplest approach to iteration planning is to take the next story from the top of your backlog, i.e. the story with the highest priority. However, business need and project conditions change quickly so it is always worth considering whether the priorities are still appropriate. Remember, you will go through this process during iteration planning for each iteration.</p>
+<p>Change to priorities frequently comes from the earlier iteration review meeting when those attending (with the exception of the product owner who has been involved on a daily basis throughout the iteration) have proposed changes that affect existing priorities. As we discovered in last week’s workshop, financial value to the product, development cost, the amount and significance of learning to the team, and the amount of risk that will be reduced by completing a particular story, will be used to help determine the priority of themes and stories.</p>
+<p><strong>Priority may be changed during the iteration planning meeting, but priorities should not be changed during the iteration.</strong></p>
+<p>The general sequence of activities for an iteration planning meeting is as follows:</p>
+<ol>
+<li>Where necessary, adjust any priorities</li>
+<li>Determine the iteration goal</li>
+<li>Discuss a story</li>
+<li>Disaggregate the story into its constituent tasks</li>
+<li>Estimate tasks -- <strong>Tasks are estimated in ideal-time</strong>.</li>
+<li>Add story to the iteration backlog.</li>
+<li>Repeat steps 3 to 6 until all stories to be included in the iteration have been discussed, broken into tasks and estimated.</li>
+</ol>
+<p>Discussion surrounding story decomposition and estimation is likely to include some design considerations. The task itself is not designed during this stage, all that is needed are guesses about what is needed to complete the feature.</p>
+<p>In today’s workshop, we will work through this process to introduce you to the activities needed when planning an iteration. Your tutor will play the role of customer or product owner. If you have a story that needs clarification David and Lynette will answer questions and explain what is involved with each story.</p>
+<h3>Objectives</h3>
+<ol>
+<li>An introduction to planning an iteration using the commitment-driven approach</li>
+<li>To practice the activities involved in planning an iteration</li>
+<li>Through discussion, to improve your understanding and learn from other’s experiences.</li>
+</ol>
+<h3>Preparation</h3>
+<p>Read and digest the following:</p>
+<ol>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=876970" target="_blank">Prioritised MVP release backlog</a></li>
+<li><a href="https://wattlecourses.anu.edu.au/mod/resource/view.php?id=876607" title="Definition of done" target="_blank">Definition of done</a> </li>
+</ol>
+<h3>Approach</h3>
+<ol>
+<li>Prior to the work workshop, each student will have read the pre-workshop material and thought about what the workshop activities entail.</li>
+<li>Make sure you have access to this document for reference during the workshop – electronic or hard-copy.</li>
+<li>Students will work in groups of 3-5 students and the workshop will be broken into two parts.</li>
+<li>During the first 20 minutes, through small group work and larger group discussion, we will break down the first story for inclusion in the iteration.</li>
+<li>In the second part of the workshop, again through small group work and larger group discussion we will finish planning the first iteration of the MVP release for the Husky Air Pilot Angels project. If there is time, students will plan the second and third iterations of this release to gain practice in creating an iteration plan.</li>
+<li>Using you individual Wattle Wiki, write your weekly Learning Journal entry that summarises the key points you have taken away from the workshop, reflects on why these are important for successful project managers and leaders, and links them to your personal learning goals, other courses, and outside experiences.</li>
+</ol>
+<h3>Workshop Activities</h3>
+<p>To plan our iteration we will use Mike Cohn’s Commitment-Driver iteration planning model</p>
+<p><img src="https://wattlecourses.anu.edu.au/pluginfile.php/1044873/mod_book/chapter/169776/MC_CommitmentIterationPlanning.png" width="575" height="258" alt="Mike Cohn's commitment-driven iteration planning" />5</p>
+<p><strong>Prior to commencing this iteration the team has completed an architectural spike, sometimes also called iteration zero. This means that </strong></p>
+<ul>
+<li><strong>the development environment is in place</strong></li>
+<li><strong>the database is created and operational and includes some of the basic business rules within its schema</strong></li>
+</ul>
+<p>The team can begin planning and working on the first iteration in the knowledge that the development environment is ready.</p>
+<p>To ensure that you understand fully what is required with iteration planning the first pass through will be done as a whole class group.</p>
+<h4>1. Adjust priorities</h4>
+<p>Carefully assess the priorities of each of the stories listed on the Release Backlog to ensure that they are still appropriate. The product owner has the final say on the priority of each story. This is because the product owner needs to decide whether finishing any unfinished work from the previous iteration will be a priority for the coming iteration.</p>
+<p>Make any changes were necessary and note these on your worksheet.</p>
+<h4>2. Identify an iteration goal</h4>
+<p>Keeping the priorities and the team’s velocity in mind, decide on the goal that will identify the iteration. Note this on your USM.</p>
+<p>In a few words, the iteration goal describes what you plan to complete during that iteration. Examples of iteration goals drawn from the SwimStats case Mike Cohn uses to describe planning are “All demographics features are finished”, “Make progress on reports”, “Finish all event time reports”, or “Get security working”. It does not have to be very specific. Look for the best description of what the team thinks most clearly describes what they wish to accomplish.</p>
+<p>To make sure you understand exactly what it is you are required to do, the whole class will work through the first story (steps 3 to 7) with your tutor.</p>
+<h4>3. Select a user story</h4>
+<p>Taking turns to act as the customer or product owner, each team member will read out the next highest priority story. The team asks questions of the product owner to ensure that they fully understand what is involved in the story.</p>
+<p>Assume that each story on your backlog is “ready”.</p>
+<p><strong>Only select stories that are directly related to the iteration goal. Each story selected must add immediate value.</strong></p>
+<p>Write the story on your worksheet.</p>
+<h4>4. Split the story into tasks</h4>
+<p>Decompose the selected story into the set of tasks necessary to complete the new functionality. During story decomposition, it is important that the team<strong> identify every task</strong> that will be<strong> needed to translate the story into a fully-functioning, and complete</strong> (i.e. meet the team’s definition of done) <strong>feature.</strong></p>
+<p>Remember, if you are planning to deliver fully-functioning software that meets your definition of done you will need to include tasks related to testing (of different types, including unit and integration, UAT etc) and documenting the feature. Write each task on your worksheet under the story.</p>
+<h4>5. Estimate the tasks</h4>
+<p>The team should discuss each task and decide how many hours it will take to complete. When the team agrees, write that estimate on your worksheet alongside the appropriate task.</p>
+<p>Do this for each of the tasks you have identified for that story.</p>
+<h4>6. Sum the estimates</h4>
+<p>Sum the estimates for each of the tasks for the story you are discussing. Write the total number of ideal hours on your worksheet.</p>
+<h4>7. Ask for team commitment</h4>
+<p>Once all the tasks have been identified, estimated and the estimates summed, ask the team whether they can commit to delivering that feature (not tasks) during that iteration. Consider the story as a whole not a set of tasks.</p>
+<p>Remember you have estimated in ideal-time. When asking for commitment, you will need to allow for the other activities (such as attending meetings, writing emails, having lunch etc.) team members will need to complete.</p>
+<p>Assume that your team is only 70% productive. Assume the standard work day is 8 hours. If you are 70% productive, this means you can only schedule work for 5.6 hours per day.</p>
+<p>If the team can commit to the story, mark your story map with the iteration number.</p>
+<h4>Repeat steps 3 to 7 until your iteration is complete</h4>
+<p>Once you have completed planning the first MVP iteration, plan the second and third iteration until you have planned all the iterations for the MVP release.</p>
+<h3>Key Learnings</h3>
+<p>Students will know that:</p>
+<ul>
+<li>when managing software development it is important to possess sufficient knowledge in sufficient detail before attempting to plan the day-to-day work of the team. That is, both the User Story and the Agile team must be completely "ready" before the User Story can be pulled into the iteration.</li>
+<li>agile approaches require iteration estimation to be conducted using ideal-time rather that relative estimation values</li>
+</ul>
+<p>Students will understand that:</p>
+<ul>
+<li>when planning an iteration task estimation needs to be conducted using ideal-time because the team must plan their actual work and story points do not have sufficient accuracy to enable this to be done with any </li>
+<li>an item of work is not included in the iteration until the team has "committed" to getting it "done" within the time constraints of the iteration</li>
+</ul>
+<p>Students will be able to do:</p>
+<ul>
+<li>create an iteration plan that when completed will enable the team to deliver real, measurable value to the client</li>
+<li>create a "committed" iteration plan that the team will be able to complete within a single iteration</li>
+</ul>
+<p> </p>
+<p></p>
+<p></p>
+<p>_____________________________________________</p>
+<p>1 Mike Cohn (2004), <em>User stories applied : For agile software development</em>, Pearson Education, Chapter 10</p>
+<p>2 Mike Cohn (2006), <em>Agile Estimating and Planning</em>, Pearson Education, Chapter 14</p>
+<p>3 Ibid., p. 146</p>
+<p>4 Ibid., p. 147</p>
+<p>5 Ibid.,p. 159</p></div></div>    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+M.yui.add_module({"jsmol":{"name":"jsmol","fullpath":"https:\/\/wattlecourses.anu.edu.au\/filter\/jmol\/yui\/jsmol\/JSmol.min.js"},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.mathjax.org\/mathjax\/2.3-latest\/MathJax.js?delayStartupUntil=configured"}});
+
+//]]>
+</script>
+<script type="text/javascript" src="https://wattlecourses.anu.edu.au/theme/javascript.php/anumore/1464187245/footer"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","filetoolarge":"is too large to upload","morehelp":"More help","loadinghelp":"Loading...","cancel":"Cancel","yes":"Yes","ok":"OK","confirm":"Confirm","no":"No","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} alias\/shortcut files that use this file as their source","select":"Select"},"block":{"addtodock":"Move this to the dock","undockitem":"Undock this item","dockblock":"Dock {$a} block","undockblock":"Undock {$a} block","undockall":"Undock all","hidedockpanel":"Hide the dock panel","hidepanel":"Hide panel"},"langconfig":{"thisdirectionvertical":"btt"},"admin":{"confirmation":"Confirmation"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+YUI().use('node', function(Y) {
+M.util.load_flowplayer();
+setTimeout("fix_column_widths()", 20);
+Y.use("moodle-core-dock-loader",function() {M.core.dock.loader.initLoader();
+});
+M.util.help_popups.setup(Y);
+Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+ M.util.js_pending('random574c4d01e69b32'); Y.on('domready', function() { M.util.move_debug_messages(Y);  M.util.js_complete('random574c4d01e69b32'); });
+ M.util.js_pending('random574c4d01e69b33'); Y.on('domready', function() { M.util.netspot_perf_info(Y, "00000000:3736_00000000:0050_574C4D01_2104229:6866", 1464618241.8042);  M.util.js_complete('random574c4d01e69b33'); });
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"});
+});
+ M.util.js_pending('random574c4d01e69b34'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random574c4d01e69b34'); });
+
+});
+//]]>
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6bb71fb66","applicationID":"3373540,3377726","transactionName":"YVMHYkVQWkIAUERQDFgZMEReHlleBRxSVgxdGRFZWF0bQRNaXk1MX1gBU08fRFkR","queueTime":0,"applicationTime":228,"atts":"TRQEFA1KSUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
